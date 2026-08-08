@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Work — Hazara Painting &amp; Decorating</title>
+<meta name="description" content="Selected residential and commercial painting projects across Greater Melbourne. Before and afters, feature walls, fit-outs and full repaints.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/home-red.css">
+<meta name="theme-color" content="#EB1818">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="canonical" href="https://hazarapainting.com.au/work/">
+<meta property="og:url" content="https://hazarapainting.com.au/work/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hazara Painting &amp; Decorating">
+<meta property="og:title" content="Our Work — Hazara Painting &amp; Decorating">
+<meta property="og:description" content="Selected residential and commercial painting projects across Greater Melbourne. Before and afters, feature walls, fit-outs and full repaints.">
+<meta property="og:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Work — Hazara Painting &amp; Decorating">
+<meta name="twitter:description" content="Selected residential and commercial painting projects across Greater Melbourne. Before and afters, feature walls, fit-outs and full repaints.">
+<meta name="twitter:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<style>
+  /* ── PAGE HERO ── */
+  #page-hero {
+    min-height: 62vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 160px 48px 80px;
+    overflow: hidden;
+  }
+  .hero-wash {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 50% 65% at 75% 35%, rgba(235,24,24,0.09) 0%, transparent 65%);
+  }
+  .page-eyebrow {
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+    opacity: 0; animation: fadeUp .8s 1.1s forwards;
+  }
+  .page-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(48px, 8vw, 116px);
+    line-height: 1.0; letter-spacing: -0.02em;
+  }
+  .page-headline em { font-style: italic; color: var(--accent); }
+  .page-sub {
+    margin-top: 34px; max-width: 470px;
+    font-size: 16px; line-height: 1.75; color: var(--ink-soft); font-weight: 300;
+    opacity: 0; animation: fadeUp .9s 1.9s forwards;
+  }
+
+  /* ── BEFORE / AFTER ── */
+  #beforeafter { padding-top: 110px; }
+  .ba-header { text-align: center; margin-bottom: 60px; }
+  .ba-header .section-label { justify-content: center; }
+  .ba-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 62px); line-height: 1.06;
+  }
+  .ba-headline em { font-style: italic; color: var(--accent); }
+  .ba-frame-outer { max-width: 620px; margin: 0 auto; position: relative; }
+  .ba {
+    position: relative; aspect-ratio: 3/4;
+    overflow: hidden; user-select: none; touch-action: none;
+    border: 1px solid var(--line);
+    background: var(--bg-deep);
+    cursor: none;
+    box-shadow: 0 26px 60px rgba(48,47,47,.16);
+  }
+  .ba-layer { position: absolute; inset: 0; }
+  /* photos fill the frame identically in both layers so they stay aligned;
+     pointer-events off so drags reach the slider, not the image */
+  .ba-img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block;
+    pointer-events: none;
+    -webkit-user-drag: none; user-select: none;
+  }
+  /* AFTER = base layer */
+  .ba-after-fill {
+    position: absolute; inset: 0;
+    background: linear-gradient(150deg, #E5D5C5 0%, #CBA184 45%, #A66A45 100%);
+  }
+  /* BEFORE = top layer, clipped from the right */
+  .ba-before { will-change: clip-path; }
+  .ba-before-fill {
+    position: absolute; inset: 0;
+    background: linear-gradient(150deg, #D9D4CB 0%, #C2BBAE 50%, #A79E8D 100%);
+  }
+  .ba-cracks { position: absolute; inset: 0; opacity: .5; }
+  .ba-badge {
+    position: absolute; top: 22px; z-index: 3;
+    font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+    padding: 9px 16px; backdrop-filter: blur(4px);
+  }
+  .ba-badge.before { left: 22px; background: rgba(36,31,26,.72); color: var(--bg); }
+  .ba-badge.after { right: 22px; background: rgba(255,255,255,.85); color: var(--ink); }
+  .ba-handle {
+    position: absolute; top: 0; bottom: 0; z-index: 4;
+    width: 0; will-change: left;
+  }
+  .ba-handle-line {
+    position: absolute; top: 0; bottom: 0; left: -1px; width: 2px;
+    background: var(--bg);
+    box-shadow: 0 0 18px rgba(36,31,26,.35);
+  }
+  .ba-knob {
+    position: absolute; top: 50%; left: 0;
+    transform: translate(-50%, -50%);
+    width: 58px; height: 58px; border-radius: 50%;
+    background: var(--bg); border: 1px solid var(--line);
+    box-shadow: 0 10px 26px rgba(36,31,26,.25);
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+  }
+  .ba-knob svg { width: 11px; height: 11px; stroke: var(--accent); stroke-width: 2.5; fill: none; }
+  .ba-hint {
+    text-align: center; margin-top: 26px;
+    font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .ba .ph-tag { z-index: 3; }
+
+  /* ── GALLERY ── */
+  #gallery { }
+  .g-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 30px; flex-wrap: wrap; margin-bottom: 56px;
+  }
+  .g-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(36px, 5vw, 72px); line-height: 1.05;
+  }
+  .g-headline em { font-style: italic; color: var(--accent); }
+  .g-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+  .g-tab {
+    font-family: var(--sans); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    padding: 13px 26px; border: 1px solid var(--line);
+    background: none; color: var(--ink); cursor: none;
+    transition: background .3s, color .3s, border-color .3s;
+  }
+  .g-tab:hover { border-color: var(--accent); color: var(--accent); }
+  .g-tab.active { background: #262525; color: var(--bg); border-color: var(--ink); }
+  .g-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px;
+    max-width: 1080px; margin: 0 auto;
+  }
+  .g-card {
+    display: block; text-decoration: none; color: var(--ink);
+    transition: opacity .45s var(--ease-out), transform .45s var(--ease-out);
+  }
+  .g-card.out { opacity: 0; transform: scale(.92); pointer-events: none; }
+  .g-card .ph { aspect-ratio: 4/3; }
+  .g-meta { padding: 18px 4px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .g-title { font-family: var(--serif); font-size: 20px; font-weight: 500; }
+  .g-cat { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
+
+  /* ── VIDEO TRANSFORMATIONS ── */
+  #transformations { padding-top: 40px; }
+  .vt-header { text-align: center; margin-bottom: 70px; }
+  .vt-header .section-label { justify-content: center; }
+  .vt-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 62px); line-height: 1.06;
+  }
+  .vt-headline em { font-style: italic; color: var(--accent); }
+  .vt-row { max-width: 860px; margin: 0 auto 90px; }
+  .vt-row:last-of-type { margin-bottom: 0; }
+  .vt-row-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 18px; flex-wrap: wrap; margin-bottom: 26px;
+  }
+  .vt-title { font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); }
+  .vt-num { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--accent); }
+  .vt-pair { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .vt-frame {
+    position: relative; aspect-ratio: 9/16; overflow: hidden;
+    border-radius: 8px; background: #262525;
+    box-shadow: 0 22px 50px rgba(48,47,47,.16);
+  }
+  .vt-frame video {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .vt-play {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 76px; height: 76px; border-radius: 50%;
+    border: none; cursor: none;
+    background: linear-gradient(120deg, var(--red), var(--amber));
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .35s var(--ease-out), opacity .3s;
+    z-index: 2;
+  }
+  .vt-frame:hover .vt-play { transform: translate(-50%, -50%) scale(1.1); }
+  .vt-play svg { width: 26px; height: 26px; fill: #fff; margin-left: 4px; }
+  .vt-frame.playing .vt-play { opacity: 0; pointer-events: none; }
+  .vt-badge {
+    position: absolute; top: 14px; left: 14px; z-index: 2;
+    font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+    padding: 8px 14px; border-radius: 3px;
+  }
+  .vt-badge.before { background: rgba(38,37,37,.78); color: #fff; }
+  .vt-badge.after { background: rgba(255,255,255,.88); color: var(--red); font-weight: 600; }
+  .vt-arrow {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--bg); border: 1px solid var(--line);
+    box-shadow: 0 10px 24px rgba(48,47,47,.18);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 3; pointer-events: none;
+  }
+  .vt-arrow svg { width: 18px; height: 18px; stroke: var(--red); stroke-width: 2; fill: none; }
+
+  /* ── TESTIMONIALS ── */
+  #reviews { background: var(--bg-deep); }
+  .rv-header { text-align: center; margin-bottom: 20px; }
+  .rv-header .section-label { justify-content: center; }
+  .rv-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 62px); line-height: 1.06;
+  }
+  .rv-headline em { font-style: italic; color: var(--accent); }
+  .rv-note {
+    text-align: center; margin: 18px auto 60px; width: fit-content;
+    font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(36,31,26,.45); background: var(--bg);
+    border: 1px dashed var(--line); padding: 8px 14px;
+  }
+  .rv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .rv-card {
+    background: var(--bg); border: 1px solid var(--line);
+    padding: 44px 38px; position: relative;
+    transition: transform .5s var(--ease-out), border-color .4s;
+  }
+  .rv-card:hover { transform: translateY(-8px); border-color: rgba(235,24,24,.4); }
+  .rv-mark {
+    font-family: var(--serif); font-size: 84px; line-height: .6;
+    color: rgba(235,24,24,.25); display: block; margin-bottom: 22px;
+  }
+  .rv-stars { display: flex; gap: 4px; margin-bottom: 20px; }
+  .rv-stars svg { width: 15px; height: 15px; fill: var(--accent); }
+  .rv-quote {
+    font-family: var(--serif); font-style: italic;
+    font-size: 18px; line-height: 1.65; margin-bottom: 26px;
+  }
+  .rv-name { font-size: 13px; font-weight: 500; letter-spacing: .04em; }
+  .rv-loc { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); margin-top: 4px; }
+
+  /* ── CTA ── */
+  #cta {
+    background: #262525; color: var(--bg);
+    text-align: center; overflow: hidden;
+    padding: 160px 48px;
+  }
+  .cta-glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(235,24,24,.16) 0%, transparent 70%);
+    animation: pulseSoft 5s ease-in-out infinite;
+  }
+  .cta-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(42px, 7vw, 104px); line-height: 1.02;
+    margin-bottom: 24px; position: relative;
+  }
+  .cta-headline em { font-style: italic; color: var(--amber); }
+  .cta-sub { font-size: 15px; color: rgba(255,255,255,.55); margin-bottom: 52px; font-weight: 300; position: relative; }
+  #cta .btn { position: relative; }
+
+  @media (max-width: 900px) {
+    #page-hero { padding: 140px 24px 60px; }
+    .g-grid { grid-template-columns: 1fr; }
+    .rv-grid { grid-template-columns: 1fr; }
+    .vt-pair { gap: 12px; }
+    .vt-arrow { display: none; }
+    .vt-play { width: 56px; height: 56px; }
+    .vt-play svg { width: 20px; height: 20px; }
+    .ba-knob { width: 48px; height: 48px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#page-hero">Skip to content</a>
+
+<div id="wipe">
+  <span class="wipe-word"><img src="/assets/mark.png" alt="" class="wipe-mark"></span>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+</div>
+<div id="cursor"><span class="cursor-label"></span></div>
+<div id="cursor-ring"></div>
+
+<nav>
+  <a href="/" class="nav-logo" aria-label="Hazara Painting & Decorating — home">
+    <img src="/assets/logo.png" alt="Hazara Painting & Decorating" class="nav-logo-img">
+  </a>
+  <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li class="nav-drop">
+      <span class="nav-drop-label">Services
+        <svg viewBox="0 0 10 6" fill="none" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+      </span>
+      <ul class="nav-drop-menu">
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </li>
+    <li><a href="/work/" class="active">Our Work</a></li>
+    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section id="page-hero">
+  <div class="hero-wash"></div>
+  <svg class="splat" style="top:26%; right:12%; width:110px; animation: floatY 6s ease-in-out infinite;" viewBox="0 0 100 100"><path d="M50 18c8-2 18 2 20 10s12 6 14 14-6 14-2 22-10 16-18 12-18 8-26 2-4-16-12-22 0-18 6-24 8-12 18-14z" fill="#EB1818" opacity=".07"/><circle cx="83" cy="22" r="4" fill="#EB1818" opacity=".12"/><circle cx="14" cy="72" r="3.4" fill="#FF9E1B" opacity=".25"/></svg>
+  <div class="paint-stripe">
+    <div class="stripe-fill">
+      <svg class="stripe-roller" viewBox="0 0 90 130">
+        <defs>
+          <linearGradient id="rollGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FF3131"/>
+            <stop offset="1" stop-color="#FF9E1B"/>
+          </linearGradient>
+        </defs>
+        <path d="M52 44 L76 20 L84 28 L62 52" fill="none" stroke="#5B5757" stroke-width="7" stroke-linejoin="round"/>
+        <rect x="66" y="2" width="30" height="13" rx="6.5" transform="rotate(42 81 8)" fill="#302F2F"/>
+        <rect x="28" y="36" width="27" height="80" rx="13" fill="url(#rollGrad)" stroke="#B80F0F" stroke-width="1.5"/>
+        <rect x="33" y="42" width="6" height="68" rx="3" fill="rgba(255,255,255,.4)"/>
+      </svg>
+    </div>
+    <span class="stripe-text">Our Work — Selected Projects</span>
+  </div>
+  <h1 class="page-headline word-reveal">
+    <span class="word"><span>Proof,</span></span>
+    <span class="word"><span>not</span></span>
+    <span class="word"><span><em>promises.</em></span></span>
+  </h1>
+  <p class="page-sub">Every project here started as someone else's tired walls. Drag, scroll and judge the finish for yourself.</p>
+</section>
+
+<!-- ═══ BEFORE / AFTER ═══ -->
+<section id="beforeafter" class="section-pad">
+  <div class="ba-header">
+    <p class="section-label reveal">Drag The Divider</p>
+    <h2 class="ba-headline reveal" data-delay="1">Same wall. <em>Different world.</em></h2>
+  </div>
+
+  <div class="ba-frame-outer reveal-scale" data-delay="2">
+    <div class="ba" id="baSlider">
+      <!-- AFTER (base) -->
+      <div class="ba-layer">
+        <img src="/assets/ba-after.jpg" class="ba-img" alt="Striped feature wall completed by Hazara Painting &amp; Decorating" loading="lazy" decoding="async">
+      </div>
+      <!-- BEFORE (top, clipped) -->
+      <div class="ba-layer ba-before" id="baBefore">
+        <img src="/assets/ba-before.jpg" class="ba-img" alt="The same wall before the feature stripes were painted" loading="lazy" decoding="async">
+      </div>
+      <span class="ba-badge before">Before</span>
+      <span class="ba-badge after">After</span>
+      <!-- HANDLE -->
+      <div class="ba-handle" id="baHandle">
+        <div class="ba-handle-line"></div>
+        <div class="ba-knob">
+          <svg viewBox="0 0 10 14"><polyline points="7 2 2 7 7 12"/></svg>
+          <svg viewBox="0 0 10 14"><polyline points="3 2 8 7 3 12"/></svg>
+        </div>
+      </div>
+    </div>
+    <p class="ba-hint">Drag left and right — works with touch too</p>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery" class="section-pad">
+  <div class="g-header">
+    <div>
+      <p class="section-label reveal">The Portfolio</p>
+      <h2 class="g-headline reveal" data-delay="1">Recent <em>projects.</em></h2>
+    </div>
+    <div class="g-tabs reveal" data-delay="2">
+      <button class="g-tab active" data-filter="all">All</button>
+      <button class="g-tab" data-filter="residential">Residential</button>
+      <button class="g-tab" data-filter="commercial">Commercial</button>
+    </div>
+  </div>
+
+  <div class="g-grid" id="gGrid">
+    <a href="/contact/" class="g-card reveal" data-cat="residential" data-delay="2" data-cursor="view" data-cursor-label="View">
+      <div class="ph"><img src="/assets/work-heritage.jpg" class="ph-img" alt="Heritage building exterior during repaint — timber sash windows and render" loading="lazy" decoding="async"></div>
+      <div class="g-meta"><span class="g-title">Toorak Heritage Restoration</span><span class="g-cat">Residential</span></div>
+    </a>
+    <a href="/contact/" class="g-card reveal" data-cat="commercial" data-cursor="view" data-cursor-label="View">
+      <div class="ph"><img src="/assets/work-office.jpg" class="ph-img" alt="Commercial fit-out interior with acoustic ceiling panels and suspended lighting" loading="lazy" decoding="async"></div>
+      <div class="g-meta"><span class="g-title">South Yarra Office Level</span><span class="g-cat">Commercial</span></div>
+    </a>
+    <a href="/contact/" class="g-card reveal" data-cat="commercial" data-delay="2" data-cursor="view" data-cursor-label="View">
+      <div class="ph"><img src="/assets/work-childcare.jpg" class="ph-img" alt="Freshly painted child care centre exterior and courtyard" loading="lazy" decoding="async"></div>
+      <div class="g-meta"><span class="g-title">Cranbourne Child Care Centre</span><span class="g-cat">Commercial</span></div>
+    </a>
+    <a href="/contact/" class="g-card reveal" data-cat="commercial" data-delay="1" data-cursor="view" data-cursor-label="View">
+      <div class="ph"><img src="/assets/work-clinic.jpg" class="ph-img" alt="Clinic interior repaint in a calming two-tone green" loading="lazy" decoding="async"></div>
+      <div class="g-meta"><span class="g-title">Hampton Park Medical Clinic</span><span class="g-cat">Commercial</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ VIDEO TRANSFORMATIONS ═══ -->
+<section id="transformations" class="section-pad">
+  <div class="vt-header">
+    <p class="section-label reveal">Watch The Change</p>
+    <h2 class="vt-headline reveal" data-delay="1">Before &amp; after, <em>in motion.</em></h2>
+  </div>
+
+    <div class="vt-row reveal">
+      <div class="vt-row-head">
+        <h3 class="vt-title">House Exterior</h3>
+        <span class="vt-num">— 01 / 04</span>
+      </div>
+      <div class="vt-pair">
+      <figure class="vt-cell">
+        <div class="vt-frame" data-cursor>
+          <video src="/assets/videos/house-before.mp4" poster="/assets/videos/house-before.jpg" preload="none" muted playsinline></video>
+          <span class="vt-badge before">Before</span>
+          <button class="vt-play" aria-label="Play House Exterior before video"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg></button>
+        </div>
+      </figure>
+      <figure class="vt-cell">
+        <div class="vt-frame" data-cursor>
+          <video src="/assets/videos/house-after.mp4" poster="/assets/videos/house-after.jpg" preload="none" muted playsinline></video>
+          <span class="vt-badge after">After</span>
+          <button class="vt-play" aria-label="Play House Exterior after video"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg></button>
+        </div>
+      </figure>
+        <span class="vt-arrow"><svg viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></span>
+      </div>
+    </div>
+
+    <div class="vt-row reveal">
+      <div class="vt-row-head">
+        <h3 class="vt-title">Theatre Room</h3>
+        <span class="vt-num">— 02 / 04</span>
+      </div>
+      <div class="vt-pair">
+      <figure class="vt-cell">
+        <div class="vt-frame" data-cursor>
+          <video src="/assets/videos/theater-before.mp4" poster="/assets/videos/theater-before.jpg" preload="none" muted playsinline></video>
+          <span class="vt-badge before">Before</span>
+          <button class="vt-play" aria-label="Play Theatre Room before video"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg></button>
+        </div>
+      </figure>
+      <figure class="vt-cell">
+        <div class="vt-frame" data-cursor>
+          <video src="/assets/videos/theater-after.mp4" poster="/assets/videos/theater-after.jpg" preload="none" muted playsinline></video>
+          <span class="vt-badge after">After</span>
+          <button class="vt-play" aria-label="Play Theatre Room after video"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg></button>
+        </div>
+      </figure>
+        <span class="vt-arrow"><svg viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></span>
+      </div>
+    </div>
+
+    <div class="vt-row reveal">
+      <div class="vt-row-head">
+        <h3 class="vt-title">Feature Wall</h3>
+        <span class="vt-num">— 03 / 04</span>
+      </div>
+      <div class="vt-pair">
+      <figure class="vt-cell">
+        <div class="vt-frame" data-cursor>
+          <video src="/assets/videos/wall-before.mp4" poster="/assets/videos/wall-before.jpg" preload="none" muted playsinline></video>
+          <span class="vt-badge before">Before</span>
+          <button class="vt-play" aria-label="Play Feature Wall before video"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg></button>
+        </div>
+      </figure>
+      <figure class="vt-cell">
+        <div class="vt-frame" data-cursor>
+          <video src="/assets/videos/wall-after.mp4" poster="/assets/videos/wall-after.jpg" preload="none" muted playsinline></video>
+          <span class="vt-badge after">After</span>
+          <button class="vt-play" aria-label="Play Feature Wall after video"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg></button>
+        </div>
+      </figure>
+        <span class="vt-arrow"><svg viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></span>
+      </div>
+    </div>
+
+    <div class="vt-row reveal">
+      <div class="vt-row-head">
+        <h3 class="vt-title">Timber & Woodwork</h3>
+        <span class="vt-num">— 04 / 04</span>
+      </div>
+      <div class="vt-pair">
+      <figure class="vt-cell">
+        <div class="vt-frame" data-cursor>
+          <video src="/assets/videos/wood-before.mp4" poster="/assets/videos/wood-before.jpg" preload="none" muted playsinline></video>
+          <span class="vt-badge before">Before</span>
+          <button class="vt-play" aria-label="Play Timber & Woodwork before video"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg></button>
+        </div>
+      </figure>
+      <figure class="vt-cell">
+        <div class="vt-frame" data-cursor>
+          <video src="/assets/videos/wood-after.mp4" poster="/assets/videos/wood-after.jpg" preload="none" muted playsinline></video>
+          <span class="vt-badge after">After</span>
+          <button class="vt-play" aria-label="Play Timber & Woodwork after video"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg></button>
+        </div>
+      </figure>
+        <span class="vt-arrow"><svg viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></span>
+      </div>
+    </div>
+</section>
+
+<div class="drip-sep" style="background: var(--bg-deep);">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none">
+    <path fill="#FFFFFF" d="M0 0 H1440 V10 C1400 10 1396 38 1378 38 C1360 38 1364 10 1330 10 H1180 C1168 10 1164 52 1146 52 C1128 52 1132 10 1100 10 H930 C918 10 914 30 900 30 C886 30 890 10 862 10 H640 C628 10 624 58 604 58 C584 58 590 10 556 10 H340 C328 10 324 34 310 34 C296 34 300 10 272 10 H120 C110 10 106 44 92 44 C78 44 82 10 60 10 H0 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="reviews" class="section-pad">
+  <div class="rv-header">
+    <p class="section-label reveal">What Clients Say</p>
+    <h2 class="rv-headline reveal" data-delay="1">Word <em>travels.</em></h2>
+  </div>
+
+  <div class="rv-grid">
+    <div class="rv-card reveal" data-delay="1">
+      <span class="rv-mark">&ldquo;</span>
+      <div class="rv-stars">
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+      </div>
+      <p class="rv-quote">Client review — coming soon.</p>
+      <p class="rv-name">Google Reviews</p>
+      <p class="rv-loc">Greater Melbourne</p>
+    </div>
+    <div class="rv-card reveal" data-delay="2">
+      <span class="rv-mark">&ldquo;</span>
+      <div class="rv-stars">
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+      </div>
+      <p class="rv-quote">Client review — coming soon.</p>
+      <p class="rv-name">Google Reviews</p>
+      <p class="rv-loc">Greater Melbourne</p>
+    </div>
+    <div class="rv-card reveal" data-delay="3">
+      <span class="rv-mark">&ldquo;</span>
+      <div class="rv-stars">
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.6 6 .7-4.5 4.1 1.2 5.9L10 14.4 4.7 17.3l1.2-5.9L1.4 7.3l6-.7z"/></svg>
+      </div>
+      <p class="rv-quote">Client review — coming soon.</p>
+      <p class="rv-name">Google Reviews</p>
+      <p class="rv-loc">Greater Melbourne</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <h2 class="cta-headline reveal">Your walls <em>next.</em></h2>
+  <p class="cta-sub reveal" data-delay="1">Free quotes across Greater Melbourne, Monday to Saturday.</p>
+  <a href="/contact/" class="btn btn-grad reveal" data-delay="2" data-magnetic>
+    <span>Start Your Project</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="/assets/logo-white.png" alt="Hazara Painting & Decorating" class="footer-logo-img" loading="lazy" decoding="async">
+      <p>Premium residential and commercial painting across Greater Melbourne. Craft in every coat.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Our Work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+61406270819">0406 270 819</a></li>
+        <li><a href="mailto:arif.qambari@hazarapainting.com.au">arif.qambari@hazarapainting.com.au</a></li>
+        <li><a href="mailto:sayed.hossaini@hazarapainting.com.au">sayed.hossaini@hazarapainting.com.au</a></li>
+        <li><span>Mon – Sat, 7:00 AM – 5:00 PM</span></li>
+        <li><span>Caulfield / Pakenham, VIC</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hazara Painting &amp; Decorating Pty Ltd. All rights reserved.</span>
+    <span>Website by <a href="https://mafidmarketing.com.au/" target="_blank" rel="noopener">Mafid Marketing</a></span>
+    <span><a href="https://abr.business.gov.au/ABN/View/28674296649" target="_blank" rel="noopener">ABN 28 674 296 649</a></span>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+// ── BEFORE / AFTER SLIDER ──
+(function () {
+  const ba = document.getElementById('baSlider');
+  const before = document.getElementById('baBefore');
+  const handle = document.getElementById('baHandle');
+  if (!ba || !before || !handle) return;
+
+  let target = 50, pos = 50, dragging = false;
+
+  function setFromClientX(x) {
+    const r = ba.getBoundingClientRect();
+    target = Math.max(4, Math.min(96, ((x - r.left) / r.width) * 100));
+  }
+
+  ba.addEventListener('pointerdown', e => {
+    dragging = true;
+    ba.setPointerCapture(e.pointerId);
+    setFromClientX(e.clientX);
+  });
+  ba.addEventListener('pointermove', e => { if (dragging) setFromClientX(e.clientX); });
+  ba.addEventListener('pointerup', () => dragging = false);
+  ba.addEventListener('pointercancel', () => dragging = false);
+
+  (function loop() {
+    pos += (target - pos) * 0.18;
+    before.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
+    handle.style.left = pos + '%';
+    requestAnimationFrame(loop);
+  })();
+})();
+
+// ── GALLERY FILTER ──
+(function () {
+  const tabs = document.querySelectorAll('.g-tab');
+  const cards = document.querySelectorAll('.g-card');
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+
+      cards.forEach(card => {
+        const show = f === 'all' || card.dataset.cat === f;
+        if (show) {
+          card.style.display = '';
+          requestAnimationFrame(() => requestAnimationFrame(() => card.classList.remove('out')));
+        } else {
+          card.classList.add('out');
+          setTimeout(() => { if (card.classList.contains('out')) card.style.display = 'none'; }, 460);
+        }
+      });
+    });
+  });
+})();
+
+// ── VIDEO TRANSFORMATIONS: click-to-play, muted, one at a time ──
+(function () {
+  const frames = document.querySelectorAll('.vt-frame');
+  if (!frames.length) return;
+  let current = null;
+
+  frames.forEach(frame => {
+    const v = frame.querySelector('video');
+    if (!v) return;
+    v.muted = true; // belt-and-braces alongside the attribute
+
+    frame.addEventListener('click', () => {
+      if (v.paused) {
+        if (current && current !== v) current.pause();
+        current = v;
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+
+    v.addEventListener('play', () => frame.classList.add('playing'));
+    v.addEventListener('pause', () => frame.classList.remove('playing'));
+    v.addEventListener('ended', () => {
+      frame.classList.remove('playing');
+      v.currentTime = 0;
+      v.load(); // restore poster
+    });
+  });
+})();
+</script>
+</body>
+</html>

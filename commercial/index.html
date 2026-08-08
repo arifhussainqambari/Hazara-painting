@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Painting — Hazara Painting &amp; Decorating</title>
+<meta name="description" content="Commercial painting for offices, retail, schools, medical, child care and aged care across Greater Melbourne. Scheduled around your business — nights and weekends included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/home-red.css">
+<meta name="theme-color" content="#EB1818">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="canonical" href="https://hazarapainting.com.au/commercial/">
+<meta property="og:url" content="https://hazarapainting.com.au/commercial/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hazara Painting &amp; Decorating">
+<meta property="og:title" content="Commercial Painting — Hazara Painting &amp; Decorating">
+<meta property="og:description" content="Commercial painting for offices, retail, schools, medical, child care and aged care across Greater Melbourne. Scheduled around your business — nights and weekends included.">
+<meta property="og:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Commercial Painting — Hazara Painting &amp; Decorating">
+<meta name="twitter:description" content="Commercial painting for offices, retail, schools, medical, child care and aged care across Greater Melbourne. Scheduled around your business — nights and weekends included.">
+<meta name="twitter:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<style>
+  /* ── PAGE HERO ── */
+  #page-hero {
+    min-height: 78vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 160px 48px 90px;
+    overflow: hidden;
+  }
+  .hero-wash {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 50% 65% at 18% 30%, rgba(235,24,24,0.09) 0%, transparent 65%);
+  }
+  .page-eyebrow {
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+    opacity: 0; animation: fadeUp .8s 1.1s forwards;
+  }
+  .page-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(46px, 7.6vw, 112px);
+    line-height: 1.0; letter-spacing: -0.02em;
+    max-width: 1080px;
+  }
+  .page-headline em { font-style: italic; color: var(--accent); }
+  .hero-foot {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 40px; flex-wrap: wrap; margin-top: 44px;
+  }
+  .page-sub {
+    max-width: 490px;
+    font-size: 16px; line-height: 1.75; color: var(--ink-soft); font-weight: 300;
+    opacity: 0; animation: fadeUp .9s 1.9s forwards;
+  }
+  .page-sub strong { color: var(--ink); font-weight: 500; }
+  .hero-foot .btn { opacity: 0; animation: fadeUp .9s 2.1s forwards; }
+
+  /* ── INTRO SPLIT ── */
+  #com-intro {
+    display: grid; grid-template-columns: 1fr 1.05fr; gap: 90px;
+    align-items: center;
+  }
+  .ci-img { aspect-ratio: 4/5; position: relative; }
+  .ci-img .ph { position: absolute; inset: 0; }
+  .ci-frame {
+    position: absolute; top: 26px; left: -26px; right: 26px; bottom: -26px;
+    border: 1px solid rgba(235,24,24,.35); z-index: -1;
+  }
+  .ci-tag {
+    position: absolute; bottom: -22px; right: -16px;
+    background: var(--accent); color: var(--bg);
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    padding: 18px 24px; z-index: 2;
+  }
+  .ci-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(34px, 3.6vw, 54px); line-height: 1.12;
+    margin-bottom: 26px;
+  }
+  .ci-headline em { font-style: italic; color: var(--accent); }
+  .ci-text {
+    font-size: 15.5px; line-height: 1.85; color: var(--ink-soft);
+    font-weight: 300; margin-bottom: 18px; max-width: 500px;
+  }
+  .ci-text strong { color: var(--ink); font-weight: 500; }
+
+  /* ── SECTORS — hover image-reveal list ── */
+  #sector-list-sec { border-top: 1px solid var(--line); position: relative; }
+  .sl-header { padding: 0 0 64px; }
+  .sl-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(36px, 4.6vw, 66px); line-height: 1.06;
+  }
+  .sl-headline em { font-style: italic; color: var(--accent); }
+  .sector-row {
+    display: grid;
+    grid-template-columns: 80px 1.1fr 1.4fr 60px;
+    align-items: center; gap: 28px;
+    padding: 34px 12px;
+    border-top: 1px solid var(--line);
+    position: relative;
+    transition: background .4s, padding-left .5s var(--ease-out);
+  }
+  .sector-row:last-child { border-bottom: 1px solid var(--line); }
+  .sector-row:hover { background: var(--bg-deep); padding-left: 30px; }
+  .sr-num {
+    font-family: var(--serif); font-style: italic;
+    font-size: 16px; color: var(--ink-soft);
+    transition: color .3s;
+  }
+  .sector-row:hover .sr-num { color: var(--accent); }
+  .sr-title {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(22px, 2.3vw, 34px); line-height: 1.1;
+    transition: transform .5s var(--ease-out);
+  }
+  .sector-row:hover .sr-title { transform: translateX(8px); }
+  .sr-desc {
+    font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); font-weight: 300;
+    max-width: 480px;
+  }
+  .sr-arrow {
+    width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transform: translateX(-10px);
+    transition: opacity .35s, transform .45s var(--ease-out), background .3s, border-color .3s;
+  }
+  .sector-row:hover .sr-arrow {
+    opacity: 1; transform: none;
+    background: var(--accent); border-color: var(--accent);
+  }
+  .sr-arrow svg { width: 15px; height: 15px; stroke: var(--bg); }
+
+  /* floating preview that follows the cursor */
+  #sectorPreview {
+    position: fixed; top: 0; left: 0;
+    width: 330px; height: 230px;
+    pointer-events: none; z-index: 90;
+    opacity: 0; transform: translate(-50%, -50%) scale(.85) rotate(0deg);
+    transition: opacity .35s, scale .35s;
+    will-change: transform;
+  }
+  #sectorPreview.on { opacity: 1; }
+  .sp-img {
+    position: absolute; inset: 0; overflow: hidden;
+    opacity: 0; transition: opacity .3s;
+    box-shadow: 0 30px 60px rgba(36,31,26,.22);
+  }
+  .sp-img.active { opacity: 1; }
+  .sp-img .ph { position: absolute; inset: 0; }
+  .sp-label {
+    position: absolute; bottom: 12px; left: 12px; z-index: 2;
+    background: rgba(255,255,255,.92);
+    font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+    padding: 7px 12px; color: var(--ink);
+  }
+
+  /* ── TRUST BAND ── */
+  #trust { background: #262525; color: var(--bg); overflow: hidden; }
+  .trust-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .trust-item { text-align: center; padding: 20px; }
+  .trust-badge {
+    width: 84px; height: 84px; margin: 0 auto 26px;
+    border: 1px solid rgba(235,24,24,.5); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .trust-badge::after {
+    content: ''; position: absolute; inset: -9px;
+    border: 1px dashed rgba(255,255,255,.18); border-radius: 50%;
+    animation: spinSlow 26s linear infinite;
+  }
+  .trust-badge svg { width: 34px; height: 34px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+  .trust-item h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin-bottom: 12px; }
+  .trust-item p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.55); font-weight: 300; max-width: 300px; margin: 0 auto; }
+
+  /* ── SCHEDULE STRIP ── */
+  #schedule { text-align: center; }
+  .sched-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(32px, 4.4vw, 62px); line-height: 1.15;
+    max-width: 900px; margin: 0 auto 26px;
+  }
+  .sched-headline em { font-style: italic; color: var(--accent); }
+  .sched-sub {
+    font-size: 15.5px; color: var(--ink-soft); font-weight: 300;
+    max-width: 560px; margin: 0 auto; line-height: 1.8;
+  }
+  .sched-times {
+    display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+    margin-top: 48px;
+  }
+  .sched-chip {
+    border: 1px solid var(--line); padding: 16px 28px;
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 12px;
+    transition: border-color .3s, background .3s, transform .3s;
+  }
+  .sched-chip:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-4px); }
+  .sched-chip .marquee-dot { width: 6px; height: 6px; }
+
+  /* ── CTA ── */
+  #cta {
+    background: #262525; color: var(--bg);
+    text-align: center; overflow: hidden;
+    padding: 160px 48px;
+  }
+  .cta-glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(235,24,24,.16) 0%, transparent 70%);
+    animation: pulseSoft 5s ease-in-out infinite;
+  }
+  .cta-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(40px, 6.6vw, 98px); line-height: 1.02;
+    margin-bottom: 24px; position: relative;
+  }
+  .cta-headline em { font-style: italic; color: var(--amber); }
+  .cta-sub { font-size: 15px; color: rgba(255,255,255,.55); margin-bottom: 52px; font-weight: 300; position: relative; }
+  #cta .btn { position: relative; }
+
+  @media (max-width: 900px) {
+    #page-hero { padding: 140px 24px 70px; }
+    #com-intro { grid-template-columns: 1fr; gap: 70px; }
+    .ci-frame { left: 14px; }
+    .sector-row { grid-template-columns: 44px 1fr; gap: 14px; padding: 26px 4px; }
+    .sr-desc { grid-column: 2; }
+    .sr-arrow { display: none; }
+    .sector-row:hover { padding-left: 4px; }
+    #sectorPreview { display: none; }
+    .trust-inner { grid-template-columns: 1fr; gap: 30px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#page-hero">Skip to content</a>
+
+<div id="wipe">
+  <span class="wipe-word"><img src="/assets/mark.png" alt="" class="wipe-mark"></span>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+</div>
+<div id="cursor"><span class="cursor-label"></span></div>
+<div id="cursor-ring"></div>
+
+<nav>
+  <a href="/" class="nav-logo" aria-label="Hazara Painting & Decorating — home">
+    <img src="/assets/logo.png" alt="Hazara Painting & Decorating" class="nav-logo-img">
+  </a>
+  <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li class="nav-drop">
+      <span class="nav-drop-label active">Services
+        <svg viewBox="0 0 10 6" fill="none" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+      </span>
+      <ul class="nav-drop-menu">
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/" class="active">Commercial Painting</a></li>
+      </ul>
+    </li>
+    <li><a href="/work/">Our Work</a></li>
+    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section id="page-hero">
+  <div class="hero-wash"></div>
+  <svg class="splat" style="bottom:16%; left:6%; width:110px; animation: floatY 7s ease-in-out infinite;" viewBox="0 0 100 100"><path d="M50 18c8-2 18 2 20 10s12 6 14 14-6 14-2 22-10 16-18 12-18 8-26 2-4-16-12-22 0-18 6-24 8-12 18-14z" fill="#EB1818" opacity=".07"/><circle cx="83" cy="22" r="4" fill="#EB1818" opacity=".12"/><circle cx="14" cy="72" r="3.4" fill="#FF9E1B" opacity=".25"/></svg>
+  <div class="paint-stripe">
+    <div class="stripe-fill">
+      <svg class="stripe-roller" viewBox="0 0 90 130">
+        <defs>
+          <linearGradient id="rollGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FF3131"/>
+            <stop offset="1" stop-color="#FF9E1B"/>
+          </linearGradient>
+        </defs>
+        <path d="M52 44 L76 20 L84 28 L62 52" fill="none" stroke="#5B5757" stroke-width="7" stroke-linejoin="round"/>
+        <rect x="66" y="2" width="30" height="13" rx="6.5" transform="rotate(42 81 8)" fill="#302F2F"/>
+        <rect x="28" y="36" width="27" height="80" rx="13" fill="url(#rollGrad)" stroke="#B80F0F" stroke-width="1.5"/>
+        <rect x="33" y="42" width="6" height="68" rx="3" fill="rgba(255,255,255,.4)"/>
+      </svg>
+    </div>
+    <span class="stripe-text">Commercial Painting — Greater Melbourne</span>
+  </div>
+  <h1 class="page-headline word-reveal">
+    <span class="word"><span>Painted</span></span>
+    <span class="word"><span>around</span></span>
+    <span class="word"><span><em>your</em></span></span>
+    <span class="word"><span>business.</span></span>
+  </h1>
+  <div class="hero-foot">
+    <p class="page-sub">Offices, retail, schools, clinics and care facilities — painted to commercial-grade standards, <strong>scheduled so you never close</strong>. Nights and weekends included.</p>
+    <a href="/contact/" class="btn btn-grad" data-magnetic>
+      <span>Get a Free Quote</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="drip-sep" style="background: var(--bg-deep);">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none">
+    <path fill="#FFFFFF" d="M0 0 H1440 V10 C1400 10 1396 38 1378 38 C1360 38 1364 10 1330 10 H1180 C1168 10 1164 52 1146 52 C1128 52 1132 10 1100 10 H930 C918 10 914 30 900 30 C886 30 890 10 862 10 H640 C628 10 624 58 604 58 C584 58 590 10 556 10 H340 C328 10 324 34 310 34 C296 34 300 10 272 10 H120 C110 10 106 44 92 44 C78 44 82 10 60 10 H0 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-wrap" style="border-top: none;">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span> Offices</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Retail &amp; Hospitality</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Schools &amp; Colleges</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Medical &amp; Clinics</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Child Care</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Aged Care</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Offices</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Retail &amp; Hospitality</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Schools &amp; Colleges</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Medical &amp; Clinics</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Child Care</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Aged Care</div>
+  </div>
+</div>
+
+<!-- ═══ INTRO ═══ -->
+<section id="com-intro" class="section-pad">
+  <div class="ci-img reveal-left">
+    <div class="ci-frame"></div>
+    <div class="ph clip-reveal">
+      <div class="ph-inner ph-fill-4"></div>
+      <div class="ph-noise"></div>
+    </div>
+    <div class="ci-tag">Zero Downtime</div>
+  </div>
+
+  <div>
+    <p class="section-label reveal">Commercial, Done Commercially</p>
+    <h2 class="ci-headline reveal" data-delay="1">Your trading hours <em>are the plan.</em></h2>
+    <p class="ci-text reveal" data-delay="2">A repaint should never cost you a day of business. We scope every commercial job around how your space actually runs — <strong>working nights, weekends, school holidays and shutdown windows</strong> so the paint goes on while your doors stay open.</p>
+    <p class="ci-text reveal" data-delay="3">From high-traffic retail walls that need to survive scuffs, to hygienic washable coatings for clinics, we specify <strong>commercial-grade systems for how the space gets used</strong> — not just how it looks on handover day.</p>
+  </div>
+</section>
+
+<!-- ═══ SECTORS — hover image-reveal list ═══ -->
+<section id="sector-list-sec" class="section-pad">
+  <div class="sl-header">
+    <p class="section-label reveal">Where We Work</p>
+    <h2 class="sl-headline reveal" data-delay="1">Six sectors. <em>One finish standard.</em></h2>
+  </div>
+
+  <div class="sector-list" id="sectorList">
+    <div class="sector-row reveal" data-cursor data-img="0">
+      <span class="sr-num">01</span>
+      <h3 class="sr-title">Offices &amp; Workspaces</h3>
+      <p class="sr-desc">Fresh, professional interiors painted overnight or over a weekend — your team leaves Friday, walks into a new office Monday.</p>
+      <span class="sr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </div>
+    <div class="sector-row reveal" data-cursor data-img="1">
+      <span class="sr-num">02</span>
+      <h3 class="sr-title">Retail &amp; Hospitality</h3>
+      <p class="sr-desc">Durable, scuff-resistant finishes for shopfronts, cafés and restaurants — done after close, ready before open.</p>
+      <span class="sr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </div>
+    <div class="sector-row reveal" data-cursor data-img="2">
+      <span class="sr-num">03</span>
+      <h3 class="sr-title">Schools &amp; Colleges</h3>
+      <p class="sr-desc">Term-break scheduling, low-VOC paints and WWCC-checked painters for classrooms, halls and campuses.</p>
+      <span class="sr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </div>
+    <div class="sector-row reveal" data-cursor data-img="3">
+      <span class="sr-num">04</span>
+      <h3 class="sr-title">Medical &amp; Clinics</h3>
+      <p class="sr-desc">Hygienic, washable coating systems for medical centres and clinics, applied with minimal disruption to patients and practice.</p>
+      <span class="sr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </div>
+    <div class="sector-row reveal" data-cursor data-img="4">
+      <span class="sr-num">05</span>
+      <h3 class="sr-title">Child Care &amp; Early Learning</h3>
+      <p class="sr-desc">Safe, washable, child-friendly paints in warm, welcoming palettes — by police-checked, WWCC-holding painters.</p>
+      <span class="sr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </div>
+    <div class="sector-row reveal" data-cursor data-img="5">
+      <span class="sr-num">06</span>
+      <h3 class="sr-title">Aged Care</h3>
+      <p class="sr-desc">Quiet, respectful, tidy work in occupied facilities — schedules and access planned around residents first, paint second.</p>
+      <span class="sr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </div>
+  </div>
+
+  <!-- floating preview -->
+  <div id="sectorPreview">
+    <div class="sp-img" data-preview="0">
+      <div class="ph"><div class="ph-inner ph-fill-4"></div><div class="ph-noise"></div></div>
+    </div>
+    <div class="sp-img" data-preview="1">
+      <div class="ph"><div class="ph-inner ph-fill-3"></div><div class="ph-noise"></div></div>
+    </div>
+    <div class="sp-img" data-preview="2">
+      <div class="ph"><div class="ph-inner ph-fill-5"></div><div class="ph-noise"></div></div>
+    </div>
+    <div class="sp-img" data-preview="3">
+      <div class="ph"><div class="ph-inner ph-fill-1"></div><div class="ph-noise"></div></div>
+    </div>
+    <div class="sp-img" data-preview="4">
+      <div class="ph"><div class="ph-inner ph-fill-2"></div><div class="ph-noise"></div></div>
+    </div>
+    <div class="sp-img" data-preview="5">
+      <div class="ph"><div class="ph-inner ph-fill-6"></div><div class="ph-noise"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAND ═══ -->
+<section id="trust" class="section-pad">
+  <div class="trust-inner">
+    <div class="trust-item reveal" data-delay="1">
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 5-5"/></svg>
+      </div>
+      <h3>Fully Insured</h3>
+      <p>Comprehensive public liability cover on every site, every job, without exception.</p>
+    </div>
+    <div class="trust-item reveal" data-delay="2">
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/><path d="M15.5 11.5l2 2 3.5-3.5"/></svg>
+      </div>
+      <h3>Police Checked</h3>
+      <p>Every painter on our team holds a current national police check.</p>
+    </div>
+    <div class="trust-item reveal" data-delay="3">
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/><path d="M9 13l2 2 4-4"/></svg>
+      </div>
+      <h3>WWCC Holders</h3>
+      <p>Working With Children Checks held for schools, child care and early learning sites.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCHEDULE ═══ -->
+<section id="schedule" class="section-pad">
+  <p class="section-label reveal" style="justify-content:center;">When We Work</p>
+  <h2 class="sched-headline reveal" data-delay="1">If your business never stops,<br><em>neither do we.</em></h2>
+  <p class="sched-sub reveal" data-delay="2">Tell us when your space is empty — we'll build the entire painting schedule around it.</p>
+  <div class="sched-times">
+    <span class="sched-chip reveal" data-delay="1"><span class="marquee-dot"></span> Overnight</span>
+    <span class="sched-chip reveal" data-delay="2"><span class="marquee-dot"></span> Weekends</span>
+    <span class="sched-chip reveal" data-delay="3"><span class="marquee-dot"></span> School Holidays</span>
+    <span class="sched-chip reveal" data-delay="4"><span class="marquee-dot"></span> Shutdown Windows</span>
+    <span class="sched-chip reveal" data-delay="5"><span class="marquee-dot"></span> Staged / Zone by Zone</span>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE 2 ═══ -->
+<div class="marquee-wrap dark reverse">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span> <em>Hazara</em> Painting &amp; Decorating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Nights &amp; Weekends Available</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Insured · Police Checked · WWCC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> <em>Hazara</em> Painting &amp; Decorating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Nights &amp; Weekends Available</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Insured · Police Checked · WWCC</div>
+  </div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <h2 class="cta-headline reveal">Zero downtime.<br><em>Full transformation.</em></h2>
+  <p class="cta-sub reveal" data-delay="1">Site visits and quotes at a time that suits your business.</p>
+  <a href="/contact/" class="btn btn-grad reveal" data-delay="2" data-magnetic>
+    <span>Book a Site Visit</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="/assets/logo-white.png" alt="Hazara Painting & Decorating" class="footer-logo-img" loading="lazy" decoding="async">
+      <p>Premium residential and commercial painting across Greater Melbourne. Craft in every coat.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Our Work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+61406270819">0406 270 819</a></li>
+        <li><a href="mailto:arif.qambari@hazarapainting.com.au">arif.qambari@hazarapainting.com.au</a></li>
+        <li><a href="mailto:sayed.hossaini@hazarapainting.com.au">sayed.hossaini@hazarapainting.com.au</a></li>
+        <li><span>Mon – Sat, 7:00 AM – 5:00 PM</span></li>
+        <li><span>Caulfield / Pakenham, VIC</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hazara Painting &amp; Decorating Pty Ltd. All rights reserved.</span>
+    <span>Website by <a href="https://mafidmarketing.com.au/" target="_blank" rel="noopener">Mafid Marketing</a></span>
+    <span><a href="https://abr.business.gov.au/ABN/View/28674296649" target="_blank" rel="noopener">ABN 28 674 296 649</a></span>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+// ── SECTOR LIST: floating image preview follows the cursor ──
+(function () {
+  const list = document.getElementById('sectorList');
+  const preview = document.getElementById('sectorPreview');
+  if (!list || !preview) return;
+  const imgs = preview.querySelectorAll('.sp-img');
+  const rows = list.querySelectorAll('.sector-row');
+
+  let px = 0, py = 0, tx = 0, ty = 0, lastX = 0, rot = 0;
+  let active = false;
+
+  document.addEventListener('mousemove', e => {
+    tx = e.clientX; ty = e.clientY;
+  });
+
+  rows.forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      const i = row.dataset.img;
+      imgs.forEach(img => img.classList.toggle('active', img.dataset.preview === i));
+      if (!active) { px = tx; py = ty; } // appear at cursor, no fly-in from corner
+      active = true;
+      preview.classList.add('on');
+    });
+    row.addEventListener('mouseleave', () => {
+      active = false;
+      preview.classList.remove('on');
+    });
+  });
+
+  (function loop() {
+    px += (tx - px) * 0.14;
+    py += (ty - py) * 0.14;
+    // subtle tilt based on horizontal velocity
+    const vel = tx - lastX;
+    rot += ((Math.max(-10, Math.min(10, vel * 0.4))) - rot) * 0.08;
+    lastX = tx;
+    preview.style.transform =
+      `translate(${px}px, ${py}px) translate(-50%, -58%) rotate(${rot}deg) scale(${active ? 1 : .85})`;
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>

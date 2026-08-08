@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════
+   HAZARA — Red/Amber brand theme (site-wide)
+   Loaded on EVERY page, after style.css.
+   Palette pulled from the logo: #EB1818 / #302F2F,
+   companion amber #FF9E1B, bright white base.
+   ═══════════════════════════════════════════════ */
+
+:root {
+  --bg: #FFFFFF;
+  --bg-deep: #FFF6ED;
+  --ink: #302F2F;
+  --ink-soft: rgba(48, 47, 47, 0.62);
+  --accent: #EB1818;
+  --accent-soft: rgba(235, 24, 24, 0.10);
+  --line: rgba(48, 47, 47, 0.12);
+  --red: #EB1818;
+  --red-bright: #FF3131;
+  --amber: #FF9E1B;
+  --amber-soft: rgba(255, 158, 27, 0.22);
+  --grad: linear-gradient(90deg, var(--red), var(--amber));
+}
+
+/* ── NAV LOGO IMAGE ── */
+.nav-logo-img { height: 50px; width: auto; display: block; transition: height .4s; }
+nav.scrolled .nav-logo-img { height: 40px; }
+
+/* ── GRADIENT BUTTONS — red ⇄ amber swap on hover ── */
+.btn-grad {
+  background-image: linear-gradient(90deg, var(--red) 0%, var(--amber) 50%, var(--red) 100%);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(235, 24, 24, 0.28);
+  transition: background-position .65s var(--ease-inout), transform .3s, box-shadow .35s;
+}
+.btn-grad:hover {
+  background-position: 100% 0%;
+  box-shadow: 0 14px 32px rgba(255, 158, 27, 0.38);
+}
+.btn-grad::before { display: none; }
+
+/* nav CTA gets the same treatment */
+.nav-cta {
+  background: linear-gradient(90deg, var(--red) 0%, var(--amber) 50%, var(--red) 100%) !important;
+  background-size: 200% 100% !important;
+  background-position: 0% 0% !important;
+  transition: background-position .65s var(--ease-inout) !important;
+}
+.nav-cta:hover { background-position: 100% 0% !important; }
+
+/* ── MARQUEE DOTS → PAINT SPLATS ── */
+.marquee-dot {
+  width: 9px; height: 9px;
+  background: var(--grad);
+  border-radius: 62% 38% 55% 45% / 48% 62% 38% 52%;
+  transform: rotate(18deg);
+}
+
+/* ── BRIGHTER PLACEHOLDER FILLS ── */
+.ph-fill-1 { background: linear-gradient(140deg, #FFE7C7 0%, #FFC078 55%, #FF9E4A 100%); }
+.ph-fill-2 { background: linear-gradient(140deg, #FFD9D2 0%, #FF9A8A 55%, #F2604C 100%); }
+.ph-fill-3 { background: linear-gradient(140deg, #FFE3C2 0%, #FFAE5C 55%, #EF7D2B 100%); }
+.ph-fill-4 { background: linear-gradient(140deg, #EDEBE8 0%, #CFCAC4 55%, #A39B93 100%); }
+.ph-fill-5 { background: linear-gradient(140deg, #FFF0D2 0%, #FFD08A 50%, #FFAB4E 100%); }
+.ph-fill-6 { background: linear-gradient(140deg, #FFDCC8 0%, #F5A981 55%, #D97E4A 100%); }
+
+/* ── DARK SURFACES = LOGO CHARCOAL ── */
+.marquee-wrap.dark, footer { background: #262525; }
+
+/* ── FOOTER LOGO ── */
+.footer-logo-img { height: 46px; width: auto; margin-bottom: 18px; display: block; }
+
+/* ── PAINTED BRUSH UNDERLINE (static, for headings/stats) ── */
+.painted { position: relative; }
+.painted::after {
+  content: '';
+  position: absolute; left: -2%; right: -4%; bottom: 0em; height: 0.32em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 24' preserveAspectRatio='none'%3E%3Cpath d='M4 15 C40 8 78 7 118 10 C150 12 178 11 196 9 L195 15 C170 17 140 18 108 17 C72 16 36 18 6 21 Z' fill='%23FF9E1B' fill-opacity='0.5'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  z-index: -1;
+}
+
+/* ── DRIP SEPARATORS ── */
+.drip-sep { line-height: 0; position: relative; z-index: 2; }
+.drip-sep svg { display: block; width: 100%; height: 64px; }
+
+/* ── REAL PHOTOS in placeholder frames ── */
+.ph-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .9s var(--ease-out);
+}
+.ph:hover .ph-img { transform: scale(1.05); }
+.hero-swatch .ph-img { object-position: 50% 28%; }
+
+/* ── SPLAT DECOS ── */
+.splat { position: absolute; pointer-events: none; z-index: 0; }
+@media (max-width: 900px) { .splat { display: none; } }
+
+/* scrolled nav blur matches the bright base (style.css uses old ivory) */
+nav.scrolled::before { background: rgba(255, 255, 255, 0.9); }
+
+/* ── PAGE WIPE: logo charcoal + brush-H mark ── */
+#wipe .wipe-col { background: #302F2F; }
+.wipe-mark {
+  height: clamp(70px, 10vw, 120px);
+  width: auto; display: block;
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.35));
+}
+
+/* charcoal bands match the logo grey everywhere */
+#cta, #trust { background: #262525; }
+
+/* ── PAINTED STRIPE + ROLLER (hero tagline, all pages) ── */
+.paint-stripe {
+  position: relative; display: inline-block;
+  width: fit-content; margin-bottom: 38px;
+  z-index: 1;
+}
+.stripe-fill {
+  position: absolute; top: 0; bottom: 0; left: -16px;
+  width: 0;
+  background: linear-gradient(90deg, var(--red) 0%, var(--red-bright) 45%, var(--amber) 115%);
+  transform: skewX(-8deg);
+  border-radius: 4px 12px 6px 14px;
+  animation: paintStripe 1.15s 1.6s cubic-bezier(.77, 0, .175, 1) forwards;
+}
+@keyframes paintStripe { to { width: calc(100% + 34px); } }
+.stripe-roller {
+  position: absolute; right: -30px; top: 50%;
+  width: 58px; height: 92px;
+  transform: translateY(-52%) skewX(8deg);
+  opacity: 0;
+  animation: rollerShow .01s 1.6s forwards, rollerHide .45s 2.85s forwards;
+}
+@keyframes rollerShow { to { opacity: 1; } }
+@keyframes rollerHide { to { opacity: 0; transform: translateY(-52%) skewX(8deg) translateX(26px) rotate(8deg); } }
+.stripe-text {
+  position: relative; z-index: 1;
+  display: inline-block; padding: 15px 30px 15px 22px;
+  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: #fff; font-weight: 600;
+  opacity: 0; animation: fadeUp .6s 2.25s forwards;
+}
+@media (max-width: 900px) {
+  .stripe-text { padding: 13px 20px 13px 16px; font-size: 10px; letter-spacing: .18em; }
+}
+
+/* ── REDUCED MOTION (theme pieces) ── */
+@media (prefers-reduced-motion: reduce) {
+  .stripe-fill { animation: none; width: calc(100% + 34px); }
+  .stripe-roller, .coat-stroke { display: none !important; }
+  .stripe-text { opacity: 1; animation: none; }
+  .rr-clip { clip-path: none !important; transition: none !important; }
+  .rr-roller { display: none !important; }
+  .splat, .hero-swatch { animation: none !important; opacity: 1 !important; }
+}
+
+/* ── ROLLER TEXT REVEAL ──
+   Text elements marked .roll-reveal are "painted on" as you scroll.
+   FAIL-SAFE DESIGN: the clipping lives on a .rr-clip wrapper that is
+   created by JavaScript. No JS → no wrapper → text renders normally.
+   Uses the same plain inset() pattern as the proven .clip-reveal. */
+.roll-reveal { position: relative; width: fit-content; }
+#cta .roll-reveal { margin-left: auto; margin-right: auto; }
+
+.rr-clip {
+  display: block;
+  /* breathing room so serif italics and descenders aren't shaved;
+     negative margins cancel the layout shift */
+  padding: 0.18em 0.28em 0.26em 0.1em;
+  margin: -0.18em -0.28em -0.26em -0.1em;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .95s cubic-bezier(.7, .05, .3, .95);
+}
+.roll-reveal.visible .rr-clip { clip-path: inset(0 0 0 0); }
+
+.rr-roller {
+  position: absolute; top: 50%; left: 0;
+  height: 1.55em;
+  transform: translate(-45%, -52%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  line-height: 0;
+}
+.rr-roller svg { height: 100%; width: auto; display: block; }
+.rr-roller.rr-tall { height: calc(100% + 14px); }
+.roll-reveal.visible .rr-roller {
+  animation:
+    rrRun .95s cubic-bezier(.7, .05, .3, .95) forwards,
+    rrFade .3s .88s forwards;
+}
+@keyframes rrRun {
+  0%   { left: 0%;   opacity: 1; }
+  100% { left: 100%; opacity: 1; }
+}
+@keyframes rrFade { to { opacity: 0; } }
+
+/* browsers without clip-path: never clip, no roller */
+@supports not (clip-path: inset(0 100% 0 0)) {
+  .rr-clip { clip-path: none; }
+  .rr-roller { display: none; }
+}

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Hazara Painting &amp; Decorating</title>
+<meta name="description" content="Get a free painting quote across Greater Melbourne. Call 0406 270 819 or send through the details — Monday to Saturday, 7am to 5pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/home-red.css">
+<meta name="theme-color" content="#EB1818">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="canonical" href="https://hazarapainting.com.au/contact/">
+<meta property="og:url" content="https://hazarapainting.com.au/contact/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hazara Painting &amp; Decorating">
+<meta property="og:title" content="Contact — Hazara Painting &amp; Decorating">
+<meta property="og:description" content="Get a free painting quote across Greater Melbourne. Call 0406 270 819 or send through the details — Monday to Saturday, 7am to 5pm.">
+<meta property="og:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Hazara Painting &amp; Decorating">
+<meta name="twitter:description" content="Get a free painting quote across Greater Melbourne. Call 0406 270 819 or send through the details — Monday to Saturday, 7am to 5pm.">
+<meta name="twitter:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<style>
+  /* ── PAGE HERO ── */
+  #page-hero {
+    min-height: 52vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 170px 48px 70px;
+    overflow: hidden;
+  }
+  .hero-wash {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 50% 65% at 78% 40%, rgba(235,24,24,0.09) 0%, transparent 65%);
+  }
+  .page-eyebrow {
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+    opacity: 0; animation: fadeUp .8s 1.1s forwards;
+  }
+  .page-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(48px, 8vw, 116px);
+    line-height: 1.0; letter-spacing: -0.02em;
+  }
+  .page-headline em { font-style: italic; color: var(--accent); }
+  .page-sub {
+    margin-top: 34px; max-width: 480px;
+    font-size: 16px; line-height: 1.75; color: var(--ink-soft); font-weight: 300;
+    opacity: 0; animation: fadeUp .9s 1.9s forwards;
+  }
+  .page-sub a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+  /* ── CONTACT SPLIT ── */
+  #contact-main { display: grid; grid-template-columns: 1fr 1.25fr; gap: 80px; align-items: start; }
+
+  /* details column */
+  .cd-block { border-top: 1px solid var(--line); padding: 30px 0; }
+  .cd-label { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .cd-value { font-family: var(--serif); font-size: clamp(20px, 1.8vw, 27px); font-weight: 500; }
+  .cd-value a { color: var(--ink); text-decoration: none; transition: color .3s; }
+  .cd-value a:hover { color: var(--accent); }
+  .cd-sub { font-size: 13px; color: var(--ink-soft); margin-top: 8px; font-weight: 300; line-height: 1.6; }
+  .photo-tip {
+    margin-top: 34px; padding: 26px 28px;
+    background: var(--bg-deep); border: 1px solid var(--line);
+    position: relative; overflow: hidden;
+  }
+  .photo-tip::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--accent);
+  }
+  .photo-tip h4 { font-family: var(--serif); font-size: 19px; font-weight: 500; margin-bottom: 8px; }
+  .photo-tip p { font-size: 13.5px; line-height: 1.7; color: var(--ink-soft); font-weight: 300; }
+  .photo-tip a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+  /* form column */
+  .form-wrap {
+    background: var(--bg-deep); border: 1px solid var(--line);
+    padding: 54px 48px;
+    position: relative;
+  }
+  .form-note {
+    width: fit-content; margin-bottom: 30px;
+    font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(36,31,26,.45); background: var(--bg);
+    border: 1px dashed var(--line); padding: 8px 14px;
+  }
+  .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .f-field { position: relative; margin-bottom: 30px; }
+  .f-field input, .f-field textarea {
+    width: 100%; background: none; border: none;
+    border-bottom: 1px solid rgba(36,31,26,.25);
+    padding: 24px 0 12px; font-family: var(--sans);
+    font-size: 15px; color: var(--ink); outline: none;
+    resize: vertical;
+  }
+  .f-field label {
+    position: absolute; left: 0; top: 24px;
+    font-size: 14px; color: var(--ink-soft);
+    pointer-events: none;
+    transition: top .3s var(--ease-out), font-size .3s, color .3s, letter-spacing .3s;
+  }
+  .f-field input:focus + label, .f-field input:not(:placeholder-shown) + label,
+  .f-field textarea:focus + label, .f-field textarea:not(:placeholder-shown) + label {
+    top: 0; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent);
+  }
+  .f-field .f-line {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: var(--accent); transform: scaleX(0); transform-origin: left;
+    transition: transform .5s var(--ease-out);
+  }
+  .f-field input:focus ~ .f-line, .f-field textarea:focus ~ .f-line { transform: scaleX(1); }
+
+  .f-group { margin-bottom: 30px; }
+  .f-group-label {
+    font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 14px;
+  }
+  .pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill { position: relative; }
+  .pill input { position: absolute; opacity: 0; pointer-events: none; }
+  .pill label {
+    display: inline-block; padding: 12px 24px;
+    border: 1px solid rgba(36,31,26,.25);
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    transition: background .3s, color .3s, border-color .3s, transform .2s;
+    user-select: none;
+  }
+  .pill label:hover { border-color: var(--accent); color: var(--accent); }
+  .pill input:checked + label {
+    background: #262525; color: var(--bg); border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+  .f-submit { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .f-status { font-size: 13px; color: var(--ink-soft); }
+  .f-status.err { color: #C81414; }
+
+  /* success state */
+  #formSuccess {
+    display: none; text-align: center; padding: 60px 20px;
+  }
+  #formSuccess.show { display: block; }
+  .fs-check {
+    width: 92px; height: 92px; margin: 0 auto 30px;
+    border: 1px solid rgba(235,24,24,.45); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .fs-check svg { width: 40px; height: 40px; stroke: var(--accent); stroke-width: 2; fill: none; }
+  .fs-check svg path {
+    stroke-dasharray: 48; stroke-dashoffset: 48;
+    animation: drawCheck .8s .2s var(--ease-out) forwards;
+  }
+  @keyframes drawCheck { to { stroke-dashoffset: 0; } }
+  #formSuccess h3 { font-family: var(--serif); font-size: 32px; font-weight: 500; margin-bottom: 12px; }
+  #formSuccess h3 em { font-style: italic; color: var(--accent); }
+  #formSuccess p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; max-width: 380px; margin: 0 auto; }
+
+  /* ── MAP ── */
+  #map-sec { padding-top: 0; }
+  .map-header { text-align: center; margin-bottom: 54px; }
+  .map-header .section-label { justify-content: center; }
+  .map-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 62px); line-height: 1.06;
+  }
+  .map-headline em { font-style: italic; color: var(--accent); }
+  .map-frame {
+    position: relative; max-width: 1080px; margin: 0 auto;
+    border: 1px solid var(--line);
+  }
+  .map-frame::before {
+    content: ''; position: absolute; top: 18px; left: -18px; right: 18px; bottom: -18px;
+    border: 1px solid rgba(235,24,24,.3); z-index: -1;
+  }
+  .map-frame iframe {
+    display: block; width: 100%; height: 480px; border: 0;
+    filter: grayscale(.85) contrast(.95) sepia(.12);
+    transition: filter .6s;
+  }
+  .map-frame:hover iframe { filter: grayscale(.2) contrast(1) sepia(0); }
+  .map-chips {
+    display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
+    margin-top: 44px;
+  }
+  .map-chip {
+    border: 1px solid var(--line); padding: 13px 24px;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: border-color .3s, background .3s, transform .3s;
+  }
+  .map-chip:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-3px); }
+  .map-chip .marquee-dot { width: 5px; height: 5px; }
+
+  @media (max-width: 900px) {
+    #page-hero { padding: 150px 24px 50px; }
+    #contact-main { grid-template-columns: 1fr; gap: 60px; }
+    .form-wrap { padding: 40px 24px; }
+    .f-row { grid-template-columns: 1fr; gap: 0; }
+    .map-frame { margin: 0 12px; }
+    .map-frame iframe { height: 380px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#page-hero">Skip to content</a>
+
+<div id="wipe">
+  <span class="wipe-word"><img src="/assets/mark.png" alt="" class="wipe-mark"></span>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+</div>
+<div id="cursor"><span class="cursor-label"></span></div>
+<div id="cursor-ring"></div>
+
+<nav>
+  <a href="/" class="nav-logo" aria-label="Hazara Painting & Decorating — home">
+    <img src="/assets/logo.png" alt="Hazara Painting & Decorating" class="nav-logo-img">
+  </a>
+  <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li class="nav-drop">
+      <span class="nav-drop-label">Services
+        <svg viewBox="0 0 10 6" fill="none" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+      </span>
+      <ul class="nav-drop-menu">
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </li>
+    <li><a href="/work/">Our Work</a></li>
+    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section id="page-hero">
+  <div class="hero-wash"></div>
+  <svg class="splat" style="top:24%; right:14%; width:100px; animation: floatY 6.5s ease-in-out infinite;" viewBox="0 0 100 100"><path d="M50 18c8-2 18 2 20 10s12 6 14 14-6 14-2 22-10 16-18 12-18 8-26 2-4-16-12-22 0-18 6-24 8-12 18-14z" fill="#EB1818" opacity=".07"/><circle cx="83" cy="22" r="4" fill="#EB1818" opacity=".12"/><circle cx="14" cy="72" r="3.4" fill="#FF9E1B" opacity=".25"/></svg>
+  <div class="paint-stripe">
+    <div class="stripe-fill">
+      <svg class="stripe-roller" viewBox="0 0 90 130">
+        <defs>
+          <linearGradient id="rollGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FF3131"/>
+            <stop offset="1" stop-color="#FF9E1B"/>
+          </linearGradient>
+        </defs>
+        <path d="M52 44 L76 20 L84 28 L62 52" fill="none" stroke="#5B5757" stroke-width="7" stroke-linejoin="round"/>
+        <rect x="66" y="2" width="30" height="13" rx="6.5" transform="rotate(42 81 8)" fill="#302F2F"/>
+        <rect x="28" y="36" width="27" height="80" rx="13" fill="url(#rollGrad)" stroke="#B80F0F" stroke-width="1.5"/>
+        <rect x="33" y="42" width="6" height="68" rx="3" fill="rgba(255,255,255,.4)"/>
+      </svg>
+    </div>
+    <span class="stripe-text">Contact — Free Quotes, Mon to Sat</span>
+  </div>
+  <h1 class="page-headline word-reveal">
+    <span class="word"><span>Let's</span></span>
+    <span class="word"><span>talk</span></span>
+    <span class="word"><span><em>paint.</em></span></span>
+  </h1>
+  <p class="page-sub">Call <a href="tel:+61406270819">0406 270 819</a> for the fastest answer, or send the details through and we'll come back within one business day.</p>
+</section>
+
+<!-- ═══ CONTACT MAIN ═══ -->
+<section id="contact-main" class="section-pad">
+  <!-- DETAILS -->
+  <div class="contact-details">
+    <p class="section-label reveal">Reach Us</p>
+
+    <div class="cd-block reveal" data-delay="1">
+      <p class="cd-label">Phone</p>
+      <p class="cd-value"><a href="tel:+61406270819">0406 270 819</a></p>
+      <p class="cd-sub">Arif answers directly — no call centre.</p>
+    </div>
+
+    <div class="cd-block reveal" data-delay="2">
+      <p class="cd-label">Email</p>
+      <p class="cd-value" style="font-size: clamp(16px, 1.5vw, 21px); word-break: break-word;"><a href="mailto:arif.qambari@hazarapainting.com.au">arif.qambari@hazarapainting.com.au</a></p>
+      <p class="cd-value" style="font-size: clamp(16px, 1.5vw, 21px); word-break: break-word; margin-top: 6px;"><a href="mailto:sayed.hossaini@hazarapainting.com.au">sayed.hossaini@hazarapainting.com.au</a></p>
+      <p class="cd-sub">Quotes, questions, plans and specs all welcome.</p>
+    </div>
+
+    <div class="cd-block reveal" data-delay="3">
+      <p class="cd-label">Hours</p>
+      <p class="cd-value">Mon – Sat, 7:00 AM – 5:00 PM</p>
+      <p class="cd-sub">Commercial work also scheduled nights and weekends.</p>
+    </div>
+
+    <div class="cd-block reveal" data-delay="4">
+      <p class="cd-label">Based In</p>
+      <p class="cd-value">Caulfield &amp; Pakenham</p>
+      <p class="cd-sub">Serving all of Greater Melbourne.</p>
+    </div>
+
+    <div class="photo-tip reveal" data-delay="5">
+      <h4>Want a faster quote?</h4>
+      <p>Text a few photos of the job to <a href="tel:+61406270819">0406 270 819</a> — walls, ceilings, trouble spots — and we'll often have a ballpark back to you the same day.</p>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-wrap reveal-scale" data-delay="2">
+
+    <form id="quoteForm" novalidate>
+      <input type="hidden" name="access_key" value="PASTE-WEB3FORMS-ACCESS-KEY-HERE">
+      <input type="hidden" name="subject" value="New quote request — Hazara website">
+      <input type="hidden" name="from_name" value="Hazara Website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="f-row">
+        <div class="f-field">
+          <input type="text" name="name" id="fName" placeholder=" " required>
+          <label for="fName">Your name</label>
+          <span class="f-line"></span>
+        </div>
+        <div class="f-field">
+          <input type="tel" name="phone" id="fPhone" placeholder=" " required>
+          <label for="fPhone">Phone</label>
+          <span class="f-line"></span>
+        </div>
+      </div>
+
+      <div class="f-row">
+        <div class="f-field">
+          <input type="email" name="email" id="fEmail" placeholder=" " required>
+          <label for="fEmail">Email</label>
+          <span class="f-line"></span>
+        </div>
+        <div class="f-field">
+          <input type="text" name="suburb" id="fSuburb" placeholder=" " required>
+          <label for="fSuburb">Suburb</label>
+          <span class="f-line"></span>
+        </div>
+      </div>
+
+      <div class="f-group">
+        <p class="f-group-label">What kind of job?</p>
+        <div class="pill-row">
+          <span class="pill">
+            <input type="radio" name="service_type" id="stRes" value="Residential" checked>
+            <label for="stRes">Residential</label>
+          </span>
+          <span class="pill">
+            <input type="radio" name="service_type" id="stCom" value="Commercial">
+            <label for="stCom">Commercial</label>
+          </span>
+          <span class="pill">
+            <input type="radio" name="service_type" id="stNS" value="Not sure yet">
+            <label for="stNS">Not Sure Yet</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="f-group">
+        <p class="f-group-label">Best time to call you back?</p>
+        <div class="pill-row">
+          <span class="pill">
+            <input type="radio" name="preferred_time" id="ptMorn" value="Morning">
+            <label for="ptMorn">Morning</label>
+          </span>
+          <span class="pill">
+            <input type="radio" name="preferred_time" id="ptAft" value="Afternoon">
+            <label for="ptAft">Afternoon</label>
+          </span>
+          <span class="pill">
+            <input type="radio" name="preferred_time" id="ptAny" value="Any time" checked>
+            <label for="ptAny">Any Time</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="f-field">
+        <textarea name="message" id="fMsg" rows="4" placeholder=" " required></textarea>
+        <label for="fMsg">Tell us about the job</label>
+        <span class="f-line"></span>
+      </div>
+
+      <div class="f-submit">
+        <button type="submit" class="btn btn-grad" id="submitBtn" data-magnetic>
+          <span id="submitLabel">Send Request</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <p class="f-status" id="formStatus" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
+    <div id="formSuccess">
+      <div class="fs-check">
+        <svg viewBox="0 0 32 32"><path d="M7 17l6 6 12-14"/></svg>
+      </div>
+      <h3>Request <em>sent.</em></h3>
+      <p>Thanks — we've got it. Expect a call or email back within one business day, usually sooner.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MAP ═══ -->
+<section id="map-sec" class="section-pad">
+  <div class="map-header">
+    <p class="section-label reveal">Service Area</p>
+    <h2 class="map-headline reveal" data-delay="1">South-east based, <em>Melbourne-wide.</em></h2>
+  </div>
+
+  <div class="map-frame reveal-scale" data-delay="2">
+    <iframe
+      src="https://maps.google.com/maps?q=Dandenong+VIC&z=10&output=embed"
+      title="Hazara Painting & Decorating service area — south-east Melbourne"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="map-chips">
+    <span class="map-chip reveal" data-delay="1"><span class="marquee-dot"></span> Caulfield</span>
+    <span class="map-chip reveal" data-delay="2"><span class="marquee-dot"></span> Pakenham</span>
+    <span class="map-chip reveal" data-delay="3"><span class="marquee-dot"></span> South-East Suburbs</span>
+    <span class="map-chip reveal" data-delay="4"><span class="marquee-dot"></span> Greater Melbourne</span>
+  </div>
+</section>
+
+<div class="drip-sep" style="background: #262525;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none">
+    <path fill="#FFFFFF" d="M0 0 H1440 V10 C1400 10 1396 38 1378 38 C1360 38 1364 10 1330 10 H1180 C1168 10 1164 52 1146 52 C1128 52 1132 10 1100 10 H930 C918 10 914 30 900 30 C886 30 890 10 862 10 H640 C628 10 624 58 604 58 C584 58 590 10 556 10 H340 C328 10 324 34 310 34 C296 34 300 10 272 10 H120 C110 10 106 44 92 44 C78 44 82 10 60 10 H0 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-wrap dark reverse">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span> <em>Hazara</em> Painting &amp; Decorating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Free Quotes Mon – Sat</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> 0406 270 819</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> <em>Hazara</em> Painting &amp; Decorating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Free Quotes Mon – Sat</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> 0406 270 819</div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="/assets/logo-white.png" alt="Hazara Painting & Decorating" class="footer-logo-img" loading="lazy" decoding="async">
+      <p>Premium residential and commercial painting across Greater Melbourne. Craft in every coat.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Our Work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+61406270819">0406 270 819</a></li>
+        <li><a href="mailto:arif.qambari@hazarapainting.com.au">arif.qambari@hazarapainting.com.au</a></li>
+        <li><a href="mailto:sayed.hossaini@hazarapainting.com.au">sayed.hossaini@hazarapainting.com.au</a></li>
+        <li><span>Mon – Sat, 7:00 AM – 5:00 PM</span></li>
+        <li><span>Caulfield / Pakenham, VIC</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hazara Painting &amp; Decorating Pty Ltd. All rights reserved.</span>
+    <span>Website by <a href="https://mafidmarketing.com.au/" target="_blank" rel="noopener">Mafid Marketing</a></span>
+    <span><a href="https://abr.business.gov.au/ABN/View/28674296649" target="_blank" rel="noopener">ABN 28 674 296 649</a></span>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+// ── QUOTE FORM → Web3Forms ──
+(function () {
+  const form = document.getElementById('quoteForm');
+  const status = document.getElementById('formStatus');
+  const btn = document.getElementById('submitBtn');
+  const label = document.getElementById('submitLabel');
+  const success = document.getElementById('formSuccess');
+  if (!form) return;
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    // simple required-field check with native messages
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    label.textContent = 'Sending…';
+    btn.style.pointerEvents = 'none';
+    status.textContent = '';
+    status.classList.remove('err');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      const json = await res.json();
+      if (!json.success) throw new Error(json.message || 'Submission failed');
+
+      form.style.display = 'none';
+      const note = document.querySelector('.form-note');
+      if (note) note.style.display = 'none';
+      success.classList.add('show');
+    } catch (err) {
+      label.textContent = 'Send Request';
+      btn.style.pointerEvents = '';
+      status.textContent = "Couldn't send — please call 0406 270 819 instead.";
+      status.classList.add('err');
+    }
+  });
+})();
+</script>
+</body>
+</html>

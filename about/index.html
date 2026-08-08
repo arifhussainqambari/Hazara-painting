@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Hazara Painting &amp; Decorating</title>
+<meta name="description" content="Owner-operated by Arif Hussain Qambari with over 10 years on the tools. Premium painting across Greater Melbourne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/home-red.css">
+<meta name="theme-color" content="#EB1818">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="canonical" href="https://hazarapainting.com.au/about/">
+<meta property="og:url" content="https://hazarapainting.com.au/about/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hazara Painting &amp; Decorating">
+<meta property="og:title" content="About — Hazara Painting &amp; Decorating">
+<meta property="og:description" content="Owner-operated by Arif Hussain Qambari with over 10 years on the tools. Premium painting across Greater Melbourne.">
+<meta property="og:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Hazara Painting &amp; Decorating">
+<meta name="twitter:description" content="Owner-operated by Arif Hussain Qambari with over 10 years on the tools. Premium painting across Greater Melbourne.">
+<meta name="twitter:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<style>
+  /* ── PAGE HERO ── */
+  #page-hero {
+    min-height: 72vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 160px 48px 90px;
+    overflow: hidden;
+  }
+  .ph-wash {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 50% 65% at 80% 30%, rgba(235,24,24,0.09) 0%, transparent 65%);
+  }
+  .page-eyebrow {
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+    opacity: 0; animation: fadeUp .8s 1.1s forwards;
+  }
+  .page-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(48px, 8vw, 116px);
+    line-height: 1.0; letter-spacing: -0.02em;
+    max-width: 1000px;
+  }
+  .page-headline em { font-style: italic; color: var(--accent); }
+  .page-sub {
+    margin-top: 36px; max-width: 460px;
+    font-size: 16px; line-height: 1.75; color: var(--ink-soft); font-weight: 300;
+    opacity: 0; animation: fadeUp .9s 1.9s forwards;
+  }
+
+  /* ── STORY ── */
+  #story {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 90px;
+    align-items: center;
+  }
+  .story-img { aspect-ratio: 3/4; position: relative; }
+  .story-img .ph { position: absolute; inset: 0; }
+  .story-frame {
+    position: absolute; top: 28px; right: -28px; left: 28px; bottom: -28px;
+    border: 1px solid rgba(235,24,24,.35); z-index: -1;
+  }
+  .story-tag {
+    position: absolute; bottom: -24px; left: -18px;
+    background: #262525; color: var(--bg);
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    padding: 20px 26px; z-index: 2;
+  }
+  .story-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(34px, 3.6vw, 54px); line-height: 1.12;
+    margin-bottom: 28px;
+  }
+  .story-headline em { font-style: italic; color: var(--accent); }
+  .story-text {
+    font-size: 15.5px; line-height: 1.85; color: var(--ink-soft);
+    font-weight: 300; margin-bottom: 20px; max-width: 520px;
+  }
+  .story-text strong { color: var(--ink); font-weight: 500; }
+  .story-sign {
+    font-family: var(--serif); font-style: italic; font-size: 26px;
+    color: var(--accent); margin-top: 34px;
+  }
+  .story-sign span {
+    display: block; font-family: var(--sans); font-style: normal;
+    font-size: 10px; letter-spacing: .24em; text-transform: uppercase;
+    color: var(--ink-soft); margin-top: 8px;
+  }
+  .stats-row { display: flex; gap: 56px; margin-top: 48px; flex-wrap: wrap; }
+
+  /* ── CRAFT / TECHNIQUES ── */
+  #craft { background: var(--bg-deep); }
+  .craft-header { text-align: center; margin-bottom: 80px; }
+  .craft-header .section-label { justify-content: center; }
+  .craft-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(36px, 4.6vw, 66px); line-height: 1.06;
+  }
+  .craft-headline em { font-style: italic; color: var(--accent); }
+  .craft-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .craft-card {
+    background: var(--bg); border: 1px solid var(--line);
+    padding: 52px 40px; position: relative; overflow: hidden;
+    transition: border-color .4s, transform .5s var(--ease-out);
+  }
+  .craft-card:hover { border-color: rgba(235,24,24,.45); transform: translateY(-10px); }
+  .craft-icon {
+    width: 74px; height: 74px; margin-bottom: 30px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(235,24,24,.3); border-radius: 50%;
+    transition: background .4s, transform .6s var(--ease-out);
+  }
+  .craft-card:hover .craft-icon { background: var(--accent-soft); transform: rotate(-8deg) scale(1.06); }
+  .craft-icon svg { width: 32px; height: 32px; stroke: var(--accent); }
+  .craft-card h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin-bottom: 14px; }
+  .craft-card p { font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); font-weight: 300; }
+  .craft-num {
+    position: absolute; top: 34px; right: 36px;
+    font-family: var(--serif); font-style: italic;
+    font-size: 15px; color: rgba(235,24,24,.5);
+  }
+
+  /* ── SECTORS — pinned scroll-driven horizontal strip ──
+     The section is given extra height by JS; the inner block sticks
+     at top of viewport and vertical scroll drives horizontal movement. */
+  #sectors { border-top: 1px solid var(--line); position: relative; }
+  .sectors-sticky {
+    position: sticky; top: 0; height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    overflow: hidden;
+  }
+  .sectors-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 30px; flex-wrap: wrap;
+    padding: 0 48px; margin-bottom: 56px;
+  }
+  .sectors-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(36px, 4.6vw, 66px); line-height: 1.06;
+  }
+  .sectors-headline em { font-style: italic; color: var(--accent); }
+  .drag-hint {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .drag-hint svg { width: 30px; height: 12px; stroke: var(--accent); animation: nudgeX 1.8s ease-in-out infinite; }
+  @keyframes nudgeX {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(8px); }
+  }
+  .hscroll-track {
+    display: flex; gap: 24px;
+    width: max-content;
+    padding: 0 48px;
+    will-change: transform;
+  }
+  .hscroll-card {
+    width: 360px; min-height: 250px; flex-shrink: 0;
+    background: var(--bg); padding: 42px 38px;
+    border: 1px solid var(--line);
+    position: relative; overflow: hidden;
+    transition: border-color .3s, transform .3s, background .4s;
+    user-select: none;
+  }
+  .hscroll-card:hover { border-color: rgba(235,24,24,.4); transform: translateY(-8px); }
+  .hscroll-card-num {
+    font-family: var(--serif); font-weight: 600; font-size: 58px;
+    color: rgba(36,31,26,.1); line-height: 1; margin-bottom: 18px;
+    transition: color .3s;
+  }
+  .hscroll-card:hover .hscroll-card-num { color: rgba(235,24,24,.35); }
+  .hscroll-card-title { font-family: var(--serif); font-size: 24px; font-weight: 500; margin-bottom: 12px; }
+  .hscroll-card-text { font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; font-weight: 300; }
+
+  /* ── PROMISE (word highlight) ── */
+  #promise { text-align: center; padding-top: 190px; padding-bottom: 170px; }
+  .promise-headline {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(26px, 3.6vw, 50px); line-height: 1.5;
+    max-width: 920px; margin: 0 auto;
+  }
+  .promise-headline .w { color: rgba(36,31,26,0.16); transition: color .35s; }
+  .promise-headline .w.lit { color: var(--ink); }
+  .promise-headline .w.accent.lit { color: var(--accent); font-style: italic; }
+
+  /* ── CTA ── */
+  #cta {
+    background: #262525; color: var(--bg);
+    text-align: center; overflow: hidden;
+    padding: 160px 48px;
+  }
+  .cta-glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(235,24,24,.16) 0%, transparent 70%);
+    animation: pulseSoft 5s ease-in-out infinite;
+  }
+  .cta-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(42px, 7vw, 104px); line-height: 1.02;
+    margin-bottom: 24px; position: relative;
+  }
+  .cta-headline em { font-style: italic; color: var(--amber); }
+  .cta-sub { font-size: 15px; color: rgba(255,255,255,.55); margin-bottom: 52px; font-weight: 300; position: relative; }
+  #cta .btn { position: relative; }
+
+  @media (max-width: 900px) {
+    #page-hero { padding: 140px 24px 70px; }
+    #story { grid-template-columns: 1fr; gap: 70px; }
+    .story-frame { right: 14px; }
+    .craft-grid { grid-template-columns: 1fr; }
+    .sectors-header { padding: 0 24px; }
+    .hscroll-track { padding: 0 24px; }
+    .hscroll-card { width: 300px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#page-hero">Skip to content</a>
+
+<div id="wipe">
+  <span class="wipe-word"><img src="/assets/mark.png" alt="" class="wipe-mark"></span>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+</div>
+<div id="cursor"><span class="cursor-label"></span></div>
+<div id="cursor-ring"></div>
+
+<nav>
+  <a href="/" class="nav-logo" aria-label="Hazara Painting & Decorating — home">
+    <img src="/assets/logo.png" alt="Hazara Painting & Decorating" class="nav-logo-img">
+  </a>
+  <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/" class="active">About</a></li>
+    <li class="nav-drop">
+      <span class="nav-drop-label">Services
+        <svg viewBox="0 0 10 6" fill="none" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+      </span>
+      <ul class="nav-drop-menu">
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </li>
+    <li><a href="/work/">Our Work</a></li>
+    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section id="page-hero">
+  <div class="ph-wash"></div>
+  <svg class="splat" style="top:20%; right:10%; width:120px; animation: floatY 6s ease-in-out infinite;" viewBox="0 0 100 100"><path d="M50 18c8-2 18 2 20 10s12 6 14 14-6 14-2 22-10 16-18 12-18 8-26 2-4-16-12-22 0-18 6-24 8-12 18-14z" fill="#EB1818" opacity=".07"/><circle cx="83" cy="22" r="4" fill="#EB1818" opacity=".12"/><circle cx="14" cy="72" r="3.4" fill="#FF9E1B" opacity=".25"/></svg>
+  <div class="paint-stripe">
+    <div class="stripe-fill">
+      <svg class="stripe-roller" viewBox="0 0 90 130">
+        <defs>
+          <linearGradient id="rollGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FF3131"/>
+            <stop offset="1" stop-color="#FF9E1B"/>
+          </linearGradient>
+        </defs>
+        <path d="M52 44 L76 20 L84 28 L62 52" fill="none" stroke="#5B5757" stroke-width="7" stroke-linejoin="round"/>
+        <rect x="66" y="2" width="30" height="13" rx="6.5" transform="rotate(42 81 8)" fill="#302F2F"/>
+        <rect x="28" y="36" width="27" height="80" rx="13" fill="url(#rollGrad)" stroke="#B80F0F" stroke-width="1.5"/>
+        <rect x="33" y="42" width="6" height="68" rx="3" fill="rgba(255,255,255,.4)"/>
+      </svg>
+    </div>
+    <span class="stripe-text">About Hazara — Owner Operated</span>
+  </div>
+  <h1 class="page-headline word-reveal">
+    <span class="word"><span>The</span></span>
+    <span class="word"><span>hands</span></span>
+    <span class="word"><span>behind</span></span>
+    <span class="word"><span>the</span></span>
+    <span class="word"><span><em>finish.</em></span></span>
+  </h1>
+  <p class="page-sub">Owner-operated, Melbourne-based, and on the tools six days a week. This is painting the way it should be done.</p>
+</section>
+
+<div class="drip-sep" style="background: var(--bg-deep);">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none">
+    <path fill="#FFFFFF" d="M0 0 H1440 V10 C1400 10 1396 38 1378 38 C1360 38 1364 10 1330 10 H1180 C1168 10 1164 52 1146 52 C1128 52 1132 10 1100 10 H930 C918 10 914 30 900 30 C886 30 890 10 862 10 H640 C628 10 624 58 604 58 C584 58 590 10 556 10 H340 C328 10 324 34 310 34 C296 34 300 10 272 10 H120 C110 10 106 44 92 44 C78 44 82 10 60 10 H0 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-wrap" style="border-top: none;">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span> Owner Operated</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> 10+ Years Experience</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Premium Paints Only</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Competitive Pricing</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Friendly, Trusted Team</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Owner Operated</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> 10+ Years Experience</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Premium Paints Only</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Competitive Pricing</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Friendly, Trusted Team</div>
+  </div>
+</div>
+
+<!-- ═══ STORY ═══ -->
+<section id="story" class="section-pad">
+  <div class="story-img reveal-left">
+    <div class="story-frame"></div>
+    <div class="ph clip-reveal">
+      <div class="ph-inner ph-fill-3"></div>
+      <div class="ph-noise"></div>
+    </div>
+    <div class="story-tag">Owner &amp; Lead Painter</div>
+  </div>
+
+  <div class="story-right">
+    <p class="section-label reveal">Our Story</p>
+    <h2 class="story-headline reveal" data-delay="1">Built on a decade of <em>doing it properly.</em></h2>
+    <p class="story-text reveal" data-delay="2">Hazara Painting &amp; Decorating is owner-operated by <strong>Arif Hussain Qambari</strong> — a painter with more than ten years on the tools across Melbourne. When you call Hazara, you speak directly with the person who will stand in your hallway, cut your edges, and sign off on the final coat. No call centres, no handballing.</p>
+    <p class="story-text reveal" data-delay="3">Every job runs on the same three rules: <strong>the highest quality paints and materials</strong>, precise technique — brush, roller or spray — and a price that's honest from the first quote to the final invoice.</p>
+    <div class="story-sign reveal" data-delay="4">
+      Arif Hussain Qambari
+      <span>Founder — Hazara Painting &amp; Decorating</span>
+    </div>
+    <div class="stats-row reveal" data-delay="4">
+      <div class="stat">
+        <div class="stat-num" data-count="10" data-suffix="+">0</div>
+        <div class="stat-label">Years on the Tools</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="100" data-suffix="+">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="6">0</div>
+        <div class="stat-label">Days a Week On Site</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CRAFT ═══ -->
+<section id="craft" class="section-pad">
+  <div class="craft-header">
+    <p class="section-label reveal">The Craft</p>
+    <h2 class="craft-headline reveal" data-delay="1">Three tools. <em>One obsession.</em></h2>
+  </div>
+
+  <div class="craft-grid">
+    <div class="craft-card reveal" data-delay="1">
+      <span class="craft-num">— 01</span>
+      <div class="craft-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M18 2l4 4-9 9-5 1 1-5 9-9z"/><path d="M8 16l-4 6"/></svg>
+      </div>
+      <h3>Brush</h3>
+      <p>Crisp cutting-in, clean lines around trims and ceilings, and detail work machines can't touch. The difference between painted and finished.</p>
+    </div>
+    <div class="craft-card reveal" data-delay="2">
+      <span class="craft-num">— 02</span>
+      <div class="craft-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="14" height="6" rx="1"/><path d="M17 6h3v5h-9v3"/><rect x="10" y="14" width="2" height="8" rx="0.5"/></svg>
+      </div>
+      <h3>Roller</h3>
+      <p>Even, consistent coverage on walls and ceilings with the right nap for every surface — smooth sets, textured renders, everything between.</p>
+    </div>
+    <div class="craft-card reveal" data-delay="3">
+      <span class="craft-num">— 03</span>
+      <div class="craft-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 10h6v10a1 1 0 01-1 1H8a1 1 0 01-1-1V10z"/><path d="M9 10V6h2v4"/><path d="M9 6V4a1 1 0 011-1h0a1 1 0 011 1v2"/><path d="M15 5h2M16 8l1.5-1M16 2l1.5 1"/></svg>
+      </div>
+      <h3>Spray</h3>
+      <p>Factory-grade finishes on doors, cabinetry and large commercial areas — fast, flawless and impossible to replicate by hand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTORS — drag strip ═══ -->
+<section id="sectors">
+  <div class="sectors-sticky">
+  <div class="sectors-header">
+    <div>
+      <p class="section-label reveal">Who We Work With</p>
+      <h2 class="sectors-headline reveal" data-delay="1">Every space. <em>Every sector.</em></h2>
+    </div>
+    <div class="drag-hint reveal" data-delay="2">
+      Keep Scrolling
+      <svg viewBox="0 0 30 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="6" x2="26" y2="6"/><polyline points="21 1 26 6 21 11"/></svg>
+    </div>
+  </div>
+
+  <div class="hscroll-track" id="hscrollTrack">
+    <div class="hscroll-card">
+      <div class="hscroll-card-num">01</div>
+      <h3 class="hscroll-card-title">Homes</h3>
+      <p class="hscroll-card-text">Interior and exterior repaints, new builds, renovations and feature walls — treated with the care we'd give our own.</p>
+    </div>
+    <div class="hscroll-card">
+      <div class="hscroll-card-num">02</div>
+      <h3 class="hscroll-card-title">Commercial</h3>
+      <p class="hscroll-card-text">Offices, retail and hospitality spaces painted around your trading hours, so business never stops.</p>
+    </div>
+    <div class="hscroll-card">
+      <div class="hscroll-card-num">03</div>
+      <h3 class="hscroll-card-title">Schools &amp; Colleges</h3>
+      <p class="hscroll-card-text">Durable, low-VOC finishes for classrooms and campuses, scheduled around terms and holidays.</p>
+    </div>
+    <div class="hscroll-card">
+      <div class="hscroll-card-num">04</div>
+      <h3 class="hscroll-card-title">Medical &amp; Clinics</h3>
+      <p class="hscroll-card-text">Hygienic, hard-wearing coatings for medical centres and clinics — clean work, minimal disruption.</p>
+    </div>
+    <div class="hscroll-card">
+      <div class="hscroll-card-num">05</div>
+      <h3 class="hscroll-card-title">Child Care &amp; Early Learning</h3>
+      <p class="hscroll-card-text">Safe, washable, child-friendly paints in bright, welcoming palettes — done to strict safety standards.</p>
+    </div>
+    <div class="hscroll-card">
+      <div class="hscroll-card-num">06</div>
+      <h3 class="hscroll-card-title">Aged Care</h3>
+      <p class="hscroll-card-text">Respectful, quiet, tidy work in occupied facilities, with schedules built around residents first.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE 2 ═══ -->
+<div class="marquee-wrap dark reverse">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span> <em>Hazara</em> Painting &amp; Decorating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Caulfield &amp; Pakenham</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Serving Greater Melbourne</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Try Us — You Won't Regret It</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> <em>Hazara</em> Painting &amp; Decorating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Caulfield &amp; Pakenham</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Serving Greater Melbourne</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Try Us — You Won't Regret It</div>
+  </div>
+</div>
+
+<!-- ═══ PROMISE ═══ -->
+<section id="promise" class="section-pad">
+  <p class="section-label reveal" style="justify-content:center;">Our Promise</p>
+  <p class="promise-headline words-highlight">
+    <span class="w">From</span> <span class="w">a</span> <span class="w">single</span> <span class="w">feature</span> <span class="w">wall</span>
+    <span class="w">to</span> <span class="w">a</span> <span class="w">full</span> <span class="w">commercial</span> <span class="w">fit-out,</span>
+    <span class="w">every</span> <span class="w">project</span> <span class="w">is</span> <span class="w">held</span>
+    <span class="w">to</span> <span class="w">the</span> <span class="w">same</span> <span class="w">standard:</span>
+    <span class="w">the</span> <span class="w">owner's</span> <span class="w">eyes,</span>
+    <span class="w">the</span> <span class="w">owner's</span> <span class="w">hands,</span>
+    <span class="w">and</span> <span class="w">the</span> <span class="w accent">owner's</span> <span class="w accent">name</span>
+    <span class="w accent">on</span> <span class="w accent">it.</span>
+  </p>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <h2 class="cta-headline reveal">Meet us on <em>your</em> site.</h2>
+  <p class="cta-sub reveal" data-delay="1">Free quotes, Monday to Saturday, across Greater Melbourne.</p>
+  <a href="/contact/" class="btn btn-grad reveal" data-delay="2" data-magnetic>
+    <span>Get a Free Quote</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="/assets/logo-white.png" alt="Hazara Painting & Decorating" class="footer-logo-img" loading="lazy" decoding="async">
+      <p>Premium residential and commercial painting across Greater Melbourne. Craft in every coat.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Our Work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+61406270819">0406 270 819</a></li>
+        <li><a href="mailto:arif.qambari@hazarapainting.com.au">arif.qambari@hazarapainting.com.au</a></li>
+        <li><a href="mailto:sayed.hossaini@hazarapainting.com.au">sayed.hossaini@hazarapainting.com.au</a></li>
+        <li><span>Mon – Sat, 7:00 AM – 5:00 PM</span></li>
+        <li><span>Caulfield / Pakenham, VIC</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hazara Painting &amp; Decorating Pty Ltd. All rights reserved.</span>
+    <span>Website by <a href="https://mafidmarketing.com.au/" target="_blank" rel="noopener">Mafid Marketing</a></span>
+    <span><a href="https://abr.business.gov.au/ABN/View/28674296649" target="_blank" rel="noopener">ABN 28 674 296 649</a></span>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+// ── SECTORS: pinned scroll-driven horizontal strip ──
+// The section only moves horizontally while it is pinned full-screen;
+// vertical page scroll drives the strip, then the page continues normally.
+(function () {
+  const section = document.getElementById('sectors');
+  const track = document.getElementById('hscrollTrack');
+  if (!section || !track) return;
+
+  let pos = 0, target = 0;
+
+  const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
+
+  // give the section enough height to "hold" the viewer while the strip plays
+  function setHeight() {
+    section.style.height = (window.innerHeight + distance() * 1.2) + 'px';
+  }
+
+  function update() {
+    const total = section.offsetHeight - window.innerHeight;
+    if (total <= 0) { target = 0; return; }
+    const scrolled = Math.max(0, Math.min(total, -section.getBoundingClientRect().top));
+    target = -(scrolled / total) * distance();
+  }
+
+  setHeight();
+  update();
+  window.addEventListener('resize', () => { setHeight(); update(); });
+  window.addEventListener('scroll', update, { passive: true });
+
+  (function loop() {
+    pos += (target - pos) * 0.1;
+    track.style.transform = `translateX(${pos}px)`;
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>

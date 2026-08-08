@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Residential Painting — Hazara Painting &amp; Decorating</title>
+<meta name="description" content="Interior and exterior house painting, feature walls, wallpaper, colour consulting and surface prep across Greater Melbourne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/home-red.css">
+<meta name="theme-color" content="#EB1818">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="canonical" href="https://hazarapainting.com.au/residential/">
+<meta property="og:url" content="https://hazarapainting.com.au/residential/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hazara Painting &amp; Decorating">
+<meta property="og:title" content="Residential Painting — Hazara Painting &amp; Decorating">
+<meta property="og:description" content="Interior and exterior house painting, feature walls, wallpaper, colour consulting and surface prep across Greater Melbourne.">
+<meta property="og:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Residential Painting — Hazara Painting &amp; Decorating">
+<meta name="twitter:description" content="Interior and exterior house painting, feature walls, wallpaper, colour consulting and surface prep across Greater Melbourne.">
+<meta name="twitter:image" content="https://hazarapainting.com.au/assets/og-image.jpg">
+<style>
+  /* ── PAGE HERO ── */
+  #page-hero {
+    min-height: 78vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 160px 48px 90px;
+    overflow: hidden;
+  }
+  .hero-wash {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 50% 65% at 82% 30%, rgba(235,24,24,0.09) 0%, transparent 65%);
+  }
+  .page-eyebrow {
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+    opacity: 0; animation: fadeUp .8s 1.1s forwards;
+  }
+  .page-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(46px, 7.6vw, 112px);
+    line-height: 1.0; letter-spacing: -0.02em;
+    max-width: 1050px;
+  }
+  .page-headline em { font-style: italic; color: var(--accent); }
+  .hero-foot {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 40px; flex-wrap: wrap; margin-top: 44px;
+  }
+  .page-sub {
+    max-width: 470px;
+    font-size: 16px; line-height: 1.75; color: var(--ink-soft); font-weight: 300;
+    opacity: 0; animation: fadeUp .9s 1.9s forwards;
+  }
+  .hero-foot .btn { opacity: 0; animation: fadeUp .9s 2.1s forwards; }
+
+  /* ── INTRO SPLIT ── */
+  #res-intro {
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 90px;
+    align-items: center;
+  }
+  .ri-img { aspect-ratio: 4/5; position: relative; }
+  .ri-img .ph { position: absolute; inset: 0; }
+  .ri-frame {
+    position: absolute; top: 26px; left: -26px; right: 26px; bottom: -26px;
+    border: 1px solid rgba(235,24,24,.35); z-index: -1;
+  }
+  .ri-tag {
+    position: absolute; bottom: -22px; right: -16px;
+    background: #262525; color: var(--bg);
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    padding: 18px 24px; z-index: 2;
+  }
+  .ri-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(34px, 3.6vw, 54px); line-height: 1.12;
+    margin-bottom: 26px;
+  }
+  .ri-headline em { font-style: italic; color: var(--accent); }
+  .ri-text {
+    font-size: 15.5px; line-height: 1.85; color: var(--ink-soft);
+    font-weight: 300; margin-bottom: 18px; max-width: 500px;
+  }
+  .ri-text strong { color: var(--ink); font-weight: 500; }
+
+  /* ── STICKY SUB-SERVICES ── */
+  #subservices { position: relative; height: 400vh; border-top: 1px solid var(--line); }
+  .feature-sticky {
+    position: sticky; top: 0; height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .feature-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 90px 64px 60px;
+  }
+  .feature-kicker { margin-bottom: 34px; }
+  .feature-progress-bar {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--line);
+  }
+  .feature-progress-fill {
+    position: absolute; top: 0; left: 0; right: 0;
+    background: var(--accent); height: 0%;
+  }
+  .feature-step {
+    padding: 22px 0; border-top: 1px solid var(--line);
+    opacity: 0.3; transition: opacity .5s, padding-left .5s var(--ease-out);
+  }
+  .feature-step.active { opacity: 1; padding-left: 14px; }
+  .feature-step-num {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+  }
+  .feature-step-title {
+    font-family: var(--serif); font-size: clamp(20px, 1.8vw, 27px);
+    font-weight: 500; margin-bottom: 7px;
+  }
+  .feature-step-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.65; font-weight: 300; max-width: 420px; }
+  .feature-right {
+    position: relative; overflow: hidden;
+    background: var(--bg-deep);
+    border-left: 1px solid var(--line);
+  }
+  .feature-visual {
+    position: absolute; inset: 0;
+    opacity: 0; transition: opacity .55s;
+  }
+  .feature-visual.active { opacity: 1; }
+  .feature-visual .ph { position: absolute; inset: 0; }
+  .fv-label {
+    position: absolute; bottom: 42px; left: 42px; z-index: 3;
+    background: rgba(255,255,255,.9); backdrop-filter: blur(6px);
+    padding: 16px 24px;
+  }
+  .fv-label-num { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .fv-label-title { font-family: var(--serif); font-size: 20px; font-weight: 500; }
+
+  /* ── INCLUDED CHECKLIST ── */
+  #included { background: var(--bg-deep); }
+  .inc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .inc-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(34px, 4vw, 58px); line-height: 1.08;
+    position: sticky; top: 140px;
+  }
+  .inc-headline em { font-style: italic; color: var(--accent); }
+  .inc-list { list-style: none; }
+  .inc-item {
+    display: flex; gap: 22px; align-items: flex-start;
+    padding: 26px 0; border-bottom: 1px solid var(--line);
+  }
+  .inc-check {
+    width: 30px; height: 30px; flex-shrink: 0; margin-top: 2px;
+    border: 1px solid rgba(235,24,24,.45); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .inc-check svg { width: 13px; height: 13px; stroke: var(--accent); stroke-width: 2.5; fill: none; }
+  .inc-check svg path {
+    stroke-dasharray: 20; stroke-dashoffset: 20;
+    transition: stroke-dashoffset .6s var(--ease-out) .2s;
+  }
+  .inc-item.visible .inc-check svg path { stroke-dashoffset: 0; }
+  .inc-item h4 { font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 6px; }
+  .inc-item p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; font-weight: 300; }
+
+  /* ── CTA ── */
+  #cta {
+    background: #262525; color: var(--bg);
+    text-align: center; overflow: hidden;
+    padding: 160px 48px;
+  }
+  .cta-glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(235,24,24,.16) 0%, transparent 70%);
+    animation: pulseSoft 5s ease-in-out infinite;
+  }
+  .cta-headline {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(42px, 7vw, 104px); line-height: 1.02;
+    margin-bottom: 24px; position: relative;
+  }
+  .cta-headline em { font-style: italic; color: var(--amber); }
+  .cta-sub { font-size: 15px; color: rgba(255,255,255,.55); margin-bottom: 52px; font-weight: 300; position: relative; }
+  #cta .btn { position: relative; }
+
+  @media (max-width: 900px) {
+    #page-hero { padding: 140px 24px 70px; }
+    #res-intro { grid-template-columns: 1fr; gap: 70px; }
+    .ri-frame { left: 14px; }
+    /* sticky feature falls back to a simple stacked list */
+    #subservices { height: auto !important; }
+    .feature-sticky { position: static; height: auto; grid-template-columns: 1fr; }
+    .feature-left { padding: 70px 24px 30px; }
+    .feature-step { opacity: 1; padding-left: 0 !important; }
+    .feature-right { display: none; }
+    .feature-progress-bar { display: none; }
+    .inc-grid { grid-template-columns: 1fr; gap: 50px; }
+    .inc-headline { position: static; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#page-hero">Skip to content</a>
+
+<div id="wipe">
+  <span class="wipe-word"><img src="/assets/mark.png" alt="" class="wipe-mark"></span>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+  <div class="wipe-col"></div>
+</div>
+<div id="cursor"><span class="cursor-label"></span></div>
+<div id="cursor-ring"></div>
+
+<nav>
+  <a href="/" class="nav-logo" aria-label="Hazara Painting & Decorating — home">
+    <img src="/assets/logo.png" alt="Hazara Painting & Decorating" class="nav-logo-img">
+  </a>
+  <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li class="nav-drop">
+      <span class="nav-drop-label active">Services
+        <svg viewBox="0 0 10 6" fill="none" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+      </span>
+      <ul class="nav-drop-menu">
+        <li><a href="/residential/" class="active">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </li>
+    <li><a href="/work/">Our Work</a></li>
+    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section id="page-hero">
+  <div class="hero-wash"></div>
+  <svg class="splat" style="top:18%; right:8%; width:120px; animation: floatY 6.5s ease-in-out infinite;" viewBox="0 0 100 100"><path d="M50 18c8-2 18 2 20 10s12 6 14 14-6 14-2 22-10 16-18 12-18 8-26 2-4-16-12-22 0-18 6-24 8-12 18-14z" fill="#EB1818" opacity=".07"/><circle cx="83" cy="22" r="4" fill="#EB1818" opacity=".12"/><circle cx="14" cy="72" r="3.4" fill="#FF9E1B" opacity=".25"/></svg>
+  <div class="paint-stripe">
+    <div class="stripe-fill">
+      <svg class="stripe-roller" viewBox="0 0 90 130">
+        <defs>
+          <linearGradient id="rollGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FF3131"/>
+            <stop offset="1" stop-color="#FF9E1B"/>
+          </linearGradient>
+        </defs>
+        <path d="M52 44 L76 20 L84 28 L62 52" fill="none" stroke="#5B5757" stroke-width="7" stroke-linejoin="round"/>
+        <rect x="66" y="2" width="30" height="13" rx="6.5" transform="rotate(42 81 8)" fill="#302F2F"/>
+        <rect x="28" y="36" width="27" height="80" rx="13" fill="url(#rollGrad)" stroke="#B80F0F" stroke-width="1.5"/>
+        <rect x="33" y="42" width="6" height="68" rx="3" fill="rgba(255,255,255,.4)"/>
+      </svg>
+    </div>
+    <span class="stripe-text">Residential Painting — Greater Melbourne</span>
+  </div>
+  <h1 class="page-headline word-reveal">
+    <span class="word"><span>Your</span></span>
+    <span class="word"><span>home,</span></span>
+    <span class="word"><span><em>beautifully</em></span></span>
+    <span class="word"><span>finished.</span></span>
+  </h1>
+  <div class="hero-foot">
+    <p class="page-sub">From a single room refresh to a full interior-and-exterior repaint — done around your life, with your home treated like our own.</p>
+    <a href="/contact/" class="btn btn-grad" data-magnetic>
+      <span>Get a Free Quote</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="drip-sep" style="background: var(--bg-deep);">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none">
+    <path fill="#FFFFFF" d="M0 0 H1440 V10 C1400 10 1396 38 1378 38 C1360 38 1364 10 1330 10 H1180 C1168 10 1164 52 1146 52 C1128 52 1132 10 1100 10 H930 C918 10 914 30 900 30 C886 30 890 10 862 10 H640 C628 10 624 58 604 58 C584 58 590 10 556 10 H340 C328 10 324 34 310 34 C296 34 300 10 272 10 H120 C110 10 106 44 92 44 C78 44 82 10 60 10 H0 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-wrap" style="border-top: none;">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span> Interior Painting</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Exterior Painting</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Feature Walls</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Wallpaper</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Colour Consulting</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Prep &amp; Repairs</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Interior Painting</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Exterior Painting</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Feature Walls</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Wallpaper</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Colour Consulting</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Prep &amp; Repairs</div>
+  </div>
+</div>
+
+<!-- ═══ INTRO ═══ -->
+<section id="res-intro" class="section-pad">
+  <div>
+    <p class="section-label reveal">Painting Homes, Properly</p>
+    <h2 class="ri-headline reveal" data-delay="1">A home is not <em>a job site.</em></h2>
+    <p class="ri-text reveal" data-delay="2">We never forget we're guests in your home. Furniture is covered, floors are protected, and every evening the site is left tidy enough to live in. <strong>You shouldn't have to move out for a repaint</strong> — and with us, you won't want to.</p>
+    <p class="ri-text reveal" data-delay="3">Every surface gets honest prep — cracks filled, plaster repaired, surfaces sanded and sealed — because <strong>paint is only as good as what's under it</strong>. Then premium, low-VOC paints go on with clean edges and full coverage, coat after coat.</p>
+  </div>
+
+  <div class="ri-img reveal-right">
+    <div class="ri-frame"></div>
+    <div class="ph clip-reveal">
+      <div class="ph-inner ph-fill-1"></div>
+      <div class="ph-noise"></div>
+    </div>
+    <div class="ri-tag">Spotless, Every Evening</div>
+  </div>
+</section>
+
+<!-- ═══ STICKY SUB-SERVICES ═══ -->
+<section id="subservices">
+  <div class="feature-sticky">
+    <div class="feature-progress-bar"><div class="feature-progress-fill" id="featureProgress"></div></div>
+
+    <div class="feature-left">
+      <div class="feature-kicker">
+        <p class="section-label">What We Do In Homes</p>
+      </div>
+      <div class="feature-steps">
+        <div class="feature-step active" data-step="0">
+          <p class="feature-step-num">01 / 04</p>
+          <h3 class="feature-step-title">Interior &amp; Exterior Painting</h3>
+          <p class="feature-step-desc">Walls, ceilings, trims, doors, weatherboards and render. Crisp lines inside, weatherproof finishes outside — built to handle Melbourne's four-seasons-a-day.</p>
+        </div>
+        <div class="feature-step" data-step="1">
+          <p class="feature-step-num">02 / 04</p>
+          <h3 class="feature-step-title">Feature Walls &amp; Wallpaper</h3>
+          <p class="feature-step-desc">Statement colours, textured finishes and precision wallpaper hanging that turn one wall into the whole room's personality.</p>
+        </div>
+        <div class="feature-step" data-step="2">
+          <p class="feature-step-num">03 / 04</p>
+          <h3 class="feature-step-title">Colour Consulting</h3>
+          <p class="feature-step-desc">Not sure which white is the right white? We help you land the palette before a drop of paint goes on — with samples on your actual walls, in your actual light.</p>
+        </div>
+        <div class="feature-step" data-step="3">
+          <p class="feature-step-num">04 / 04</p>
+          <h3 class="feature-step-title">Surface Prep &amp; Repairs</h3>
+          <p class="feature-step-desc">Plaster repair, crack filling, sanding, sealing and protective coatings. The invisible work that decides whether a paint job lasts two years or fifteen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-right">
+      <div class="feature-visual active" data-visual="0">
+        <div class="ph">
+          <div class="ph-inner ph-fill-1"></div>
+          <div class="ph-noise"></div>
+        </div>
+        <div class="fv-label">
+          <div class="fv-label-num">01</div>
+          <div class="fv-label-title">Interior &amp; Exterior</div>
+        </div>
+      </div>
+      <div class="feature-visual" data-visual="1">
+        <div class="ph">
+          <div class="ph-inner ph-fill-3"></div>
+          <div class="ph-noise"></div>
+        </div>
+        <div class="fv-label">
+          <div class="fv-label-num">02</div>
+          <div class="fv-label-title">Feature Walls &amp; Wallpaper</div>
+        </div>
+      </div>
+      <div class="feature-visual" data-visual="2">
+        <div class="ph">
+          <div class="ph-inner ph-fill-5"></div>
+          <div class="ph-noise"></div>
+        </div>
+        <div class="fv-label">
+          <div class="fv-label-num">03</div>
+          <div class="fv-label-title">Colour Consulting</div>
+        </div>
+      </div>
+      <div class="feature-visual" data-visual="3">
+        <div class="ph">
+          <div class="ph-inner ph-fill-6"></div>
+          <div class="ph-noise"></div>
+        </div>
+        <div class="fv-label">
+          <div class="fv-label-num">04</div>
+          <div class="fv-label-title">Prep &amp; Repairs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INCLUDED ═══ -->
+<section id="included" class="section-pad">
+  <div class="inc-grid">
+    <div>
+      <p class="section-label reveal">The Hazara Standard</p>
+      <h2 class="inc-headline reveal" data-delay="1">Included in<br><em>every</em> home job.</h2>
+    </div>
+    <ul class="inc-list">
+      <li class="inc-item reveal" data-delay="1">
+        <span class="inc-check"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7-8"/></svg></span>
+        <div>
+          <h4>Furniture &amp; floor protection</h4>
+          <p>Everything covered, taped and shielded before the first tin is opened.</p>
+        </div>
+      </li>
+      <li class="inc-item reveal" data-delay="2">
+        <span class="inc-check"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7-8"/></svg></span>
+        <div>
+          <h4>Premium paints &amp; materials</h4>
+          <p>The highest quality paints, every time — no cutting corners on what goes on your walls.</p>
+        </div>
+      </li>
+      <li class="inc-item reveal" data-delay="3">
+        <span class="inc-check"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7-8"/></svg></span>
+        <div>
+          <h4>Honest, fixed quotes</h4>
+          <p>The price we quote is the price you pay. Competitive, itemised, no surprises.</p>
+        </div>
+      </li>
+      <li class="inc-item reveal" data-delay="4">
+        <span class="inc-check"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7-8"/></svg></span>
+        <div>
+          <h4>Daily clean-up</h4>
+          <p>The site is left tidy every single evening — and spotless at handover.</p>
+        </div>
+      </li>
+      <li class="inc-item reveal" data-delay="5">
+        <span class="inc-check"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7-8"/></svg></span>
+        <div>
+          <h4>Final walkthrough together</h4>
+          <p>We don't call it done until you've walked every room with us and agreed it is.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE 2 ═══ -->
+<div class="marquee-wrap dark reverse">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span> <em>Hazara</em> Painting &amp; Decorating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Free Colour Advice With Every Quote</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Fully Licensed &amp; Insured</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> <em>Hazara</em> Painting &amp; Decorating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Free Colour Advice With Every Quote</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Fully Licensed &amp; Insured</div>
+  </div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <h2 class="cta-headline reveal">Which room <em>first?</em></h2>
+  <p class="cta-sub reveal" data-delay="1">Free quotes, Monday to Saturday, across Greater Melbourne.</p>
+  <a href="/contact/" class="btn btn-grad reveal" data-delay="2" data-magnetic>
+    <span>Get a Free Quote</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="/assets/logo-white.png" alt="Hazara Painting & Decorating" class="footer-logo-img" loading="lazy" decoding="async">
+      <p>Premium residential and commercial painting across Greater Melbourne. Craft in every coat.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Our Work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/residential/">Residential Painting</a></li>
+        <li><a href="/commercial/">Commercial Painting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+61406270819">0406 270 819</a></li>
+        <li><a href="mailto:arif.qambari@hazarapainting.com.au">arif.qambari@hazarapainting.com.au</a></li>
+        <li><a href="mailto:sayed.hossaini@hazarapainting.com.au">sayed.hossaini@hazarapainting.com.au</a></li>
+        <li><span>Mon – Sat, 7:00 AM – 5:00 PM</span></li>
+        <li><span>Caulfield / Pakenham, VIC</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hazara Painting &amp; Decorating Pty Ltd. All rights reserved.</span>
+    <span>Website by <a href="https://mafidmarketing.com.au/" target="_blank" rel="noopener">Mafid Marketing</a></span>
+    <span><a href="https://abr.business.gov.au/ABN/View/28674296649" target="_blank" rel="noopener">ABN 28 674 296 649</a></span>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+// ── STICKY SUB-SERVICES: scroll-driven steps + crossfading visuals ──
+(function () {
+  const section = document.getElementById('subservices');
+  if (!section) return;
+  const fill = document.getElementById('featureProgress');
+  const steps = section.querySelectorAll('.feature-step');
+  const visuals = section.querySelectorAll('.feature-visual');
+  const n = steps.length;
+
+  function update() {
+    if (window.innerWidth <= 900) return; // static fallback on mobile
+    const total = section.offsetHeight - window.innerHeight;
+    if (total <= 0) return;
+    const scrolled = Math.max(0, Math.min(total, -section.getBoundingClientRect().top));
+    const pct = scrolled / total;
+    if (fill) fill.style.height = (pct * 100) + '%';
+    const idx = Math.min(n - 1, Math.floor(pct * n));
+    steps.forEach((s, i) => s.classList.toggle('active', i === idx));
+    visuals.forEach((v, i) => v.classList.toggle('active', i === idx));
+  }
+
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+})();
+</script>
+</body>
+</html>
